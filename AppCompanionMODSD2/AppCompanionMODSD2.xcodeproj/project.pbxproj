@@ -15,7 +15,7 @@
 		C88F80C928D3538600E569BC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C88F80C828D3538600E569BC /* Preview Assets.xcassets */; };
 		C8FF096828DC73CF00BF94A7 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FF096728DC73CF00BF94A7 /* WebService.swift */; };
 		C8FF096C28DC744B00BF94A7 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FF096B28DC744B00BF94A7 /* Constant.swift */; };
-		C8FF096F28DC74BB00BF94A7 /* DestinyNodeStepSummaryDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FF096E28DC74BB00BF94A7 /* DestinyNodeStepSummaryDefinition.swift */; };
+		C8FF096F28DC74BB00BF94A7 /* Codables.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FF096E28DC74BB00BF94A7 /* Codables.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +39,7 @@
 		C88F80C828D3538600E569BC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C8FF096728DC73CF00BF94A7 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		C8FF096B28DC744B00BF94A7 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
-		C8FF096E28DC74BB00BF94A7 /* DestinyNodeStepSummaryDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinyNodeStepSummaryDefinition.swift; sourceTree = "<group>"; };
+		C8FF096E28DC74BB00BF94A7 /* Codables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Codables.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,16 +103,8 @@
 			isa = PBXGroup;
 			children = (
 				C8FF096428DC63D700BF94A7 /* Screen */,
-				C8FF096328DC63C600BF94A7 /* Navigation */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		C8FF096328DC63C600BF94A7 /* Navigation */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Navigation;
 			sourceTree = "<group>";
 		};
 		C8FF096428DC63D700BF94A7 /* Screen */ = {
@@ -160,7 +152,7 @@
 		C8FF096D28DC748C00BF94A7 /* Codable+VM */ = {
 			isa = PBXGroup;
 			children = (
-				C8FF096E28DC74BB00BF94A7 /* DestinyNodeStepSummaryDefinition.swift */,
+				C8FF096E28DC74BB00BF94A7 /* Codables.swift */,
 			);
 			path = "Codable+VM";
 			sourceTree = "<group>";
@@ -303,7 +295,7 @@
 				C88F80C428D3538500E569BC /* ContentView.swift in Sources */,
 				C8FF096C28DC744B00BF94A7 /* Constant.swift in Sources */,
 				C8FF096828DC73CF00BF94A7 /* WebService.swift in Sources */,
-				C8FF096F28DC74BB00BF94A7 /* DestinyNodeStepSummaryDefinition.swift in Sources */,
+				C8FF096F28DC74BB00BF94A7 /* Codables.swift in Sources */,
 				C88F80C228D3538500E569BC /* AppCompanionMODSD2App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

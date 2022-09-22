@@ -7,37 +7,32 @@
 import Foundation
 
 // ==================
-// MARK: - jsonDestinyNodeStepSummaryDefinition
+// MARK: - NodeStepSummary
 // ==================
-
 // --- Response.
-typealias ResponseJsonDestinyNodeStepSummaryDefinition = [String: ResponseJsonDestinyNodeStepSummaryDefinitionValue]
-
+typealias NodeStepSummaryResponse = [String: NodeStepSummaryDefinitionResponseValue]
 // --- Codable.
-struct ResponseJsonDestinyNodeStepSummaryDefinitionValue: Codable {
+struct NodeStepSummaryDefinitionResponseValue: Codable {
     #warning("dee 🔲 match Key only")
-    var displayProperties: DisplayProperties
+    var displayProperties: DisplayPropertiesCodable
 }
-
-struct DisplayProperties: Codable {
+struct DisplayPropertiesCodable: Codable {
     var name: String
     var icon: String?
 }
-
 // --- Model.
-struct ResponseJsonDestinyNodeStepSummaryDefinitionValueModel: Identifiable {
+struct NodeStepSummaryModel: Identifiable {
     var id = UUID()
     var key: String
     var name: String
     var icon: String?
 }
-
 // --- ViewModel.
 @MainActor // allow to replace DispatchQueue.main.async
-class ResponseJsonDestinyNodeStepSummaryDefinitionViewModel: ObservableObject {
+class NodeStepSummaryViewModel: ObservableObject {
 
     // --- Expose to the view.
-    @Published var results: [ResponseJsonDestinyNodeStepSummaryDefinitionValueModel] = []
+    @Published var results: [NodeStepSummaryModel] = []
 
     func getData() async {
         do {
@@ -45,14 +40,14 @@ class ResponseJsonDestinyNodeStepSummaryDefinitionViewModel: ObservableObject {
             let response = try await WebService().fetchData()
 
             // extract data
-            response?.forEach({ (key: String, value: ResponseJsonDestinyNodeStepSummaryDefinitionValue) in
+            response?.forEach({ (key: String, value: NodeStepSummaryDefinitionResponseValue) in
 
                 let key = key
                 let name = value.displayProperties.name
                 let icon = value.displayProperties.icon
 
                 self.results.append(
-                    ResponseJsonDestinyNodeStepSummaryDefinitionValueModel(
+                    NodeStepSummaryModel(
                         key: key,
                         name: name,
                         icon: icon
