@@ -8,6 +8,38 @@ import Collections
 import SwiftUI
 
 struct ContentView: View {
+    @State private var selectedTabIndex = 1
+    var body: some View {
+        TabView {
+            NavigationView {
+                ExtractedView00()
+            }
+            .tabItem {
+                Image(systemName: "person")
+                Text("Current")
+            }
+            NavigationView {
+                List {
+                    NavigationLink("responseJsonDestinyNodeStepSummaryDefinitionViewModel") {
+                        ExtractedView00()
+                    }
+                }
+            }
+            .tabItem {
+                Image(systemName: "externaldrive")
+                Text("OK")
+            }
+        }
+
+    }
+}
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
+
+struct ExtractedView00: View {
     @StateObject private var responseJsonDestinyNodeStepSummaryDefinitionViewModel = ResponseJsonDestinyNodeStepSummaryDefinitionViewModel()
     var body: some View {
         VStack {
@@ -22,8 +54,8 @@ struct ContentView: View {
 
                             } placeholder: { Color.red }
                                 .background(Color.blue)
-                            .frame(width: 50, height: 50)
-                            .clipShape(RoundedRectangle(cornerRadius: 25))
+                                .frame(width: 50, height: 50)
+                                .clipShape(RoundedRectangle(cornerRadius: 25))
                         } else {
                             Image(systemName: "person")
 
@@ -32,15 +64,10 @@ struct ContentView: View {
                     }
                 }
             }
-        }.onAppear {
+        }.onAppear{
             Task {
                 await responseJsonDestinyNodeStepSummaryDefinitionViewModel.getData() // delegue this to VM
             }
         }
-    }
-}
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
     }
 }
