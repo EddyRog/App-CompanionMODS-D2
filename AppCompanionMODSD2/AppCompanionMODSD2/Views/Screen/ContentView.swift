@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject private var responseJsonDestinyNodeStepSummaryDefinitionViewModel = ResponseJsonDestinyNodeStepSummaryDefinitionViewModel()
-
     var body: some View {
         VStack {
             List {
@@ -35,7 +34,7 @@ struct ContentView: View {
             }
         }.onAppear {
             Task {
-                await responseJsonDestinyNodeStepSummaryDefinitionViewModel.getData() //delegue this to VM
+                await responseJsonDestinyNodeStepSummaryDefinitionViewModel.getData() // delegue this to VM
             }
         }
     }
@@ -45,4 +44,3 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-

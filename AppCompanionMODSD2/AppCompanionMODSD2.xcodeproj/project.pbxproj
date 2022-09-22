@@ -7,17 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C8671A9628D9E023009716F9 /* EngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8671A9528D9E023009716F9 /* EngineTests.swift */; };
 		C8671A9E28D9FD82009716F9 /* Notes in Resources */ = {isa = PBXBuildFile; fileRef = C8671A9D28D9FD82009716F9 /* Notes */; };
 		C8671AA028DA0F6F009716F9 /* dsFR.json in Resources */ = {isa = PBXBuildFile; fileRef = C8671A9F28DA0F6F009716F9 /* dsFR.json */; };
 		C88F80C228D3538500E569BC /* AppCompanionMODSD2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F80C128D3538500E569BC /* AppCompanionMODSD2App.swift */; };
 		C88F80C428D3538500E569BC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F80C328D3538500E569BC /* ContentView.swift */; };
 		C88F80C628D3538600E569BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C88F80C528D3538600E569BC /* Assets.xcassets */; };
 		C88F80C928D3538600E569BC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C88F80C828D3538600E569BC /* Preview Assets.xcassets */; };
-		C8FF093E28DA199900BF94A7 /* All.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FF093D28DA199900BF94A7 /* All.swift */; };
-		C8FF094128DB20E500BF94A7 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = C8FF094028DB20E500BF94A7 /* Collections */; };
-		C8FF094328DB20E500BF94A7 /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = C8FF094228DB20E500BF94A7 /* DequeModule */; };
-		C8FF094528DB20E500BF94A7 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = C8FF094428DB20E500BF94A7 /* OrderedCollections */; };
+		C8FF096828DC73CF00BF94A7 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FF096728DC73CF00BF94A7 /* WebService.swift */; };
+		C8FF096C28DC744B00BF94A7 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FF096B28DC744B00BF94A7 /* Constant.swift */; };
+		C8FF096F28DC74BB00BF94A7 /* DestinyNodeStepSummaryDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FF096E28DC74BB00BF94A7 /* DestinyNodeStepSummaryDefinition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,7 +30,6 @@
 
 /* Begin PBXFileReference section */
 		C8671A9328D9E023009716F9 /* EngineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EngineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C8671A9528D9E023009716F9 /* EngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineTests.swift; sourceTree = "<group>"; };
 		C8671A9D28D9FD82009716F9 /* Notes */ = {isa = PBXFileReference; lastKnownFileType = text; path = Notes; sourceTree = "<group>"; };
 		C8671A9F28DA0F6F009716F9 /* dsFR.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = dsFR.json; sourceTree = "<group>"; };
 		C88F80BE28D3538500E569BC /* AppCompanionMODSD2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppCompanionMODSD2.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,7 +37,9 @@
 		C88F80C328D3538500E569BC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C88F80C528D3538600E569BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C88F80C828D3538600E569BC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		C8FF093D28DA199900BF94A7 /* All.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = All.swift; sourceTree = "<group>"; };
+		C8FF096728DC73CF00BF94A7 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		C8FF096B28DC744B00BF94A7 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		C8FF096E28DC74BB00BF94A7 /* DestinyNodeStepSummaryDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinyNodeStepSummaryDefinition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,36 +54,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8FF094128DB20E500BF94A7 /* Collections in Frameworks */,
-				C8FF094328DB20E500BF94A7 /* DequeModule in Frameworks */,
-				C8FF094528DB20E500BF94A7 /* OrderedCollections in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C8671A9428D9E023009716F9 /* EngineTests */ = {
-			isa = PBXGroup;
-			children = (
-				C8671A9528D9E023009716F9 /* EngineTests.swift */,
-			);
-			path = EngineTests;
-			sourceTree = "<group>";
-		};
-		C8671A9C28D9E406009716F9 /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-				C8FF093D28DA199900BF94A7 /* All.swift */,
-			);
-			path = Domain;
-			sourceTree = "<group>";
-		};
 		C88F80B528D3538500E569BC = {
 			isa = PBXGroup;
 			children = (
 				C88F80C028D3538500E569BC /* AppCompanionMODSD2 */,
-				C8671A9428D9E023009716F9 /* EngineTests */,
 				C88F80BF28D3538500E569BC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -102,12 +81,12 @@
 			isa = PBXGroup;
 			children = (
 				C88F80C128D3538500E569BC /* AppCompanionMODSD2App.swift */,
-				C8671A9C28D9E406009716F9 /* Domain */,
-				C88F80C328D3538500E569BC /* ContentView.swift */,
-				C88F80C528D3538600E569BC /* Assets.xcassets */,
+				C8FF096A28DC742700BF94A7 /* Shared */,
+				C8FF096228DC63B300BF94A7 /* Views */,
+				C8FF096628DC643D00BF94A7 /* Services */,
+				C8FF096928DC73E900BF94A7 /* Models */,
+				C8FF096528DC63F500BF94A7 /* Ressources */,
 				C88F80C728D3538600E569BC /* Preview Content */,
-				C8671A9D28D9FD82009716F9 /* Notes */,
-				C8671A9F28DA0F6F009716F9 /* dsFR.json */,
 			);
 			path = AppCompanionMODSD2;
 			sourceTree = "<group>";
@@ -118,6 +97,72 @@
 				C88F80C828D3538600E569BC /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C8FF096228DC63B300BF94A7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C8FF096428DC63D700BF94A7 /* Screen */,
+				C8FF096328DC63C600BF94A7 /* Navigation */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C8FF096328DC63C600BF94A7 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		C8FF096428DC63D700BF94A7 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				C88F80C328D3538500E569BC /* ContentView.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		C8FF096528DC63F500BF94A7 /* Ressources */ = {
+			isa = PBXGroup;
+			children = (
+				C88F80C528D3538600E569BC /* Assets.xcassets */,
+				C8671A9D28D9FD82009716F9 /* Notes */,
+				C8671A9F28DA0F6F009716F9 /* dsFR.json */,
+			);
+			path = Ressources;
+			sourceTree = "<group>";
+		};
+		C8FF096628DC643D00BF94A7 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C8FF096728DC73CF00BF94A7 /* WebService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C8FF096928DC73E900BF94A7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C8FF096D28DC748C00BF94A7 /* Codable+VM */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C8FF096A28DC742700BF94A7 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				C8FF096B28DC744B00BF94A7 /* Constant.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		C8FF096D28DC748C00BF94A7 /* Codable+VM */ = {
+			isa = PBXGroup;
+			children = (
+				C8FF096E28DC74BB00BF94A7 /* DestinyNodeStepSummaryDefinition.swift */,
+			);
+			path = "Codable+VM";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,9 +201,6 @@
 			);
 			name = AppCompanionMODSD2;
 			packageProductDependencies = (
-				C8FF094028DB20E500BF94A7 /* Collections */,
-				C8FF094228DB20E500BF94A7 /* DequeModule */,
-				C8FF094428DB20E500BF94A7 /* OrderedCollections */,
 			);
 			productName = AppCompanionMODSD2;
 			productReference = C88F80BE28D3538500E569BC /* AppCompanionMODSD2.app */;
@@ -193,7 +235,6 @@
 			);
 			mainGroup = C88F80B528D3538500E569BC;
 			packageReferences = (
-				C8FF093F28DB20E500BF94A7 /* XCRemoteSwiftPackageReference "swift-collections" */,
 			);
 			productRefGroup = C88F80BF28D3538500E569BC /* Products */;
 			projectDirPath = "";
@@ -229,7 +270,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		C88F80CF28D353AB00E569BC /* Run Script swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputFileListPaths = (
@@ -241,9 +282,9 @@
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
-			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\n";
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -252,7 +293,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8671A9628D9E023009716F9 /* EngineTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,8 +300,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8FF093E28DA199900BF94A7 /* All.swift in Sources */,
 				C88F80C428D3538500E569BC /* ContentView.swift in Sources */,
+				C8FF096C28DC744B00BF94A7 /* Constant.swift in Sources */,
+				C8FF096828DC73CF00BF94A7 /* WebService.swift in Sources */,
+				C8FF096F28DC74BB00BF94A7 /* DestinyNodeStepSummaryDefinition.swift in Sources */,
 				C88F80C228D3538500E569BC /* AppCompanionMODSD2App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -516,35 +558,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		C8FF093F28DB20E500BF94A7 /* XCRemoteSwiftPackageReference "swift-collections" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/apple/swift-collections.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		C8FF094028DB20E500BF94A7 /* Collections */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C8FF093F28DB20E500BF94A7 /* XCRemoteSwiftPackageReference "swift-collections" */;
-			productName = Collections;
-		};
-		C8FF094228DB20E500BF94A7 /* DequeModule */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C8FF093F28DB20E500BF94A7 /* XCRemoteSwiftPackageReference "swift-collections" */;
-			productName = DequeModule;
-		};
-		C8FF094428DB20E500BF94A7 /* OrderedCollections */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C8FF093F28DB20E500BF94A7 /* XCRemoteSwiftPackageReference "swift-collections" */;
-			productName = OrderedCollections;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C88F80B628D3538500E569BC /* Project object */;
 }
