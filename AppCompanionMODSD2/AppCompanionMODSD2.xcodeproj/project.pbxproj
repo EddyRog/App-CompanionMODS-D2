@@ -13,6 +13,7 @@
 		C88F80C428D3538500E569BC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F80C328D3538500E569BC /* ContentView.swift */; };
 		C88F80C628D3538600E569BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C88F80C528D3538600E569BC /* Assets.xcassets */; };
 		C88F80C928D3538600E569BC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C88F80C828D3538600E569BC /* Preview Assets.xcassets */; };
+		C8C67C7928E21259003C36C4 /* DestinyDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C67C7828E21259003C36C4 /* DestinyDatabaseManager.swift */; };
 		C8FF096828DC73CF00BF94A7 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FF096728DC73CF00BF94A7 /* WebService.swift */; };
 		C8FF096C28DC744B00BF94A7 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FF096B28DC744B00BF94A7 /* Constant.swift */; };
 		C8FF096F28DC74BB00BF94A7 /* Codables.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FF096E28DC74BB00BF94A7 /* Codables.swift */; };
@@ -37,6 +38,7 @@
 		C88F80C328D3538500E569BC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C88F80C528D3538600E569BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C88F80C828D3538600E569BC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C8C67C7828E21259003C36C4 /* DestinyDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinyDatabaseManager.swift; sourceTree = "<group>"; };
 		C8FF096728DC73CF00BF94A7 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		C8FF096B28DC744B00BF94A7 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		C8FF096E28DC74BB00BF94A7 /* Codables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Codables.swift; sourceTree = "<group>"; };
@@ -80,12 +82,10 @@
 		C88F80C028D3538500E569BC /* AppCompanionMODSD2 */ = {
 			isa = PBXGroup;
 			children = (
-				C88F80C128D3538500E569BC /* AppCompanionMODSD2App.swift */,
-				C8FF096A28DC742700BF94A7 /* Shared */,
-				C8FF096228DC63B300BF94A7 /* Views */,
-				C8FF096628DC643D00BF94A7 /* Services */,
-				C8FF096928DC73E900BF94A7 /* Models */,
-				C8FF096528DC63F500BF94A7 /* Ressources */,
+				C8C67C7628E2117F003C36C4 /* UserSide */,
+				C8C67C7528E21167003C36C4 /* Domain */,
+				C8FF096628DC643D00BF94A7 /* ServerSide */,
+				C8C67C7728E211D1003C36C4 /* SupportingFiles */,
 				C88F80C728D3538600E569BC /* Preview Content */,
 			);
 			path = AppCompanionMODSD2;
@@ -97,6 +97,32 @@
 				C88F80C828D3538600E569BC /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C8C67C7528E21167003C36C4 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		C8C67C7628E2117F003C36C4 /* UserSide */ = {
+			isa = PBXGroup;
+			children = (
+				C88F80C128D3538500E569BC /* AppCompanionMODSD2App.swift */,
+				C8FF096228DC63B300BF94A7 /* Views */,
+			);
+			path = UserSide;
+			sourceTree = "<group>";
+		};
+		C8C67C7728E211D1003C36C4 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				C8FF096A28DC742700BF94A7 /* Shared */,
+				C8FF096928DC73E900BF94A7 /* Models */,
+				C8FF096528DC63F500BF94A7 /* Ressources */,
+			);
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 		C8FF096228DC63B300BF94A7 /* Views */ = {
@@ -125,12 +151,13 @@
 			path = Ressources;
 			sourceTree = "<group>";
 		};
-		C8FF096628DC643D00BF94A7 /* Services */ = {
+		C8FF096628DC643D00BF94A7 /* ServerSide */ = {
 			isa = PBXGroup;
 			children = (
 				C8FF096728DC73CF00BF94A7 /* WebService.swift */,
+				C8C67C7828E21259003C36C4 /* DestinyDatabaseManager.swift */,
 			);
-			path = Services;
+			path = ServerSide;
 			sourceTree = "<group>";
 		};
 		C8FF096928DC73E900BF94A7 /* Models */ = {
@@ -295,6 +322,7 @@
 				C88F80C428D3538500E569BC /* ContentView.swift in Sources */,
 				C8FF096C28DC744B00BF94A7 /* Constant.swift in Sources */,
 				C8FF096828DC73CF00BF94A7 /* WebService.swift in Sources */,
+				C8C67C7928E21259003C36C4 /* DestinyDatabaseManager.swift in Sources */,
 				C8FF096F28DC74BB00BF94A7 /* Codables.swift in Sources */,
 				C88F80C228D3538500E569BC /* AppCompanionMODSD2App.swift in Sources */,
 			);
