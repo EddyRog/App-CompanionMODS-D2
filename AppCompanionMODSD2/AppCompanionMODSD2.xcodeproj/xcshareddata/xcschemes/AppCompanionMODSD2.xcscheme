@@ -39,6 +39,17 @@
                ReferencedContainer = "container:AppCompanionMODSD2.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "C8C67C8028E2DEEA003C36C4"
+               BuildableName = "AppCompanionTests.xctest"
+               BlueprintName = "AppCompanionTests"
+               ReferencedContainer = "container:AppCompanionMODSD2.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

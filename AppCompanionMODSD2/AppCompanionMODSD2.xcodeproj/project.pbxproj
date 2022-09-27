@@ -14,13 +14,15 @@
 		C88F80C628D3538600E569BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C88F80C528D3538600E569BC /* Assets.xcassets */; };
 		C88F80C928D3538600E569BC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C88F80C828D3538600E569BC /* Preview Assets.xcassets */; };
 		C8C67C7928E21259003C36C4 /* DestinyDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C67C7828E21259003C36C4 /* DestinyDatabaseManager.swift */; };
+		C8C67C8428E2DEEA003C36C4 /* AppCompanionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C67C8328E2DEEA003C36C4 /* AppCompanionTests.swift */; };
+		C8C67C9228E30DA6003C36C4 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = C8C67C9128E30DA6003C36C4 /* Zip */; };
 		C8FF096828DC73CF00BF94A7 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FF096728DC73CF00BF94A7 /* WebService.swift */; };
 		C8FF096C28DC744B00BF94A7 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FF096B28DC744B00BF94A7 /* Constant.swift */; };
 		C8FF096F28DC74BB00BF94A7 /* Codables.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FF096E28DC74BB00BF94A7 /* Codables.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		C8671A9728D9E023009716F9 /* PBXContainerItemProxy */ = {
+		C8C67C8528E2DEEA003C36C4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C88F80B628D3538500E569BC /* Project object */;
 			proxyType = 1;
@@ -30,7 +32,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C8671A9328D9E023009716F9 /* EngineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EngineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8671A9D28D9FD82009716F9 /* Notes */ = {isa = PBXFileReference; lastKnownFileType = text; path = Notes; sourceTree = "<group>"; };
 		C8671A9F28DA0F6F009716F9 /* dsFR.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = dsFR.json; sourceTree = "<group>"; };
 		C88F80BE28D3538500E569BC /* AppCompanionMODSD2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppCompanionMODSD2.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,20 +40,25 @@
 		C88F80C528D3538600E569BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C88F80C828D3538600E569BC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C8C67C7828E21259003C36C4 /* DestinyDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinyDatabaseManager.swift; sourceTree = "<group>"; };
+		C8C67C7B28E2DC70003C36C4 /* destinyDatabaseSQLite.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = destinyDatabaseSQLite.sqlite3; sourceTree = "<group>"; };
+		C8C67C8128E2DEEA003C36C4 /* AppCompanionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppCompanionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C67C8328E2DEEA003C36C4 /* AppCompanionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCompanionTests.swift; sourceTree = "<group>"; };
+		C8C67C9328E30DE1003C36C4 /* DestinyDatabase.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = DestinyDatabase.zip; sourceTree = "<group>"; };
 		C8FF096728DC73CF00BF94A7 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		C8FF096B28DC744B00BF94A7 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		C8FF096E28DC74BB00BF94A7 /* Codables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Codables.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		C8671A9028D9E023009716F9 /* Frameworks */ = {
+		C88F80BB28D3538500E569BC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8C67C9228E30DA6003C36C4 /* Zip in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C88F80BB28D3538500E569BC /* Frameworks */ = {
+		C8C67C7E28E2DEEA003C36C4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -65,7 +71,9 @@
 		C88F80B528D3538500E569BC = {
 			isa = PBXGroup;
 			children = (
+				C8C67C9328E30DE1003C36C4 /* DestinyDatabase.zip */,
 				C88F80C028D3538500E569BC /* AppCompanionMODSD2 */,
+				C8C67C8228E2DEEA003C36C4 /* AppCompanionTests */,
 				C88F80BF28D3538500E569BC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -74,7 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				C88F80BE28D3538500E569BC /* AppCompanionMODSD2.app */,
-				C8671A9328D9E023009716F9 /* EngineTests.xctest */,
+				C8C67C8128E2DEEA003C36C4 /* AppCompanionTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -83,7 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				C8C67C7628E2117F003C36C4 /* UserSide */,
-				C8C67C7528E21167003C36C4 /* Domain */,
+				C8C67C7A28E2DB6B003C36C4 /* Domain */,
 				C8FF096628DC643D00BF94A7 /* ServerSide */,
 				C8C67C7728E211D1003C36C4 /* SupportingFiles */,
 				C88F80C728D3538600E569BC /* Preview Content */,
@@ -97,13 +105,6 @@
 				C88F80C828D3538600E569BC /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		C8C67C7528E21167003C36C4 /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Domain;
 			sourceTree = "<group>";
 		};
 		C8C67C7628E2117F003C36C4 /* UserSide */ = {
@@ -123,6 +124,21 @@
 				C8FF096528DC63F500BF94A7 /* Ressources */,
 			);
 			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		C8C67C7A28E2DB6B003C36C4 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		C8C67C8228E2DEEA003C36C4 /* AppCompanionTests */ = {
+			isa = PBXGroup;
+			children = (
+				C8C67C8328E2DEEA003C36C4 /* AppCompanionTests.swift */,
+			);
+			path = AppCompanionTests;
 			sourceTree = "<group>";
 		};
 		C8FF096228DC63B300BF94A7 /* Views */ = {
@@ -171,6 +187,7 @@
 		C8FF096A28DC742700BF94A7 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				C8C67C7B28E2DC70003C36C4 /* destinyDatabaseSQLite.sqlite3 */,
 				C8FF096B28DC744B00BF94A7 /* Constant.swift */,
 			);
 			path = Shared;
@@ -187,24 +204,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C8671A9228D9E023009716F9 /* EngineTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C8671A9B28D9E023009716F9 /* Build configuration list for PBXNativeTarget "EngineTests" */;
-			buildPhases = (
-				C8671A8F28D9E023009716F9 /* Sources */,
-				C8671A9028D9E023009716F9 /* Frameworks */,
-				C8671A9128D9E023009716F9 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				C8671A9828D9E023009716F9 /* PBXTargetDependency */,
-			);
-			name = EngineTests;
-			productName = EngineTests;
-			productReference = C8671A9328D9E023009716F9 /* EngineTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		C88F80BD28D3538500E569BC /* AppCompanionMODSD2 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C88F80CC28D3538600E569BC /* Build configuration list for PBXNativeTarget "AppCompanionMODSD2" */;
@@ -220,10 +219,29 @@
 			);
 			name = AppCompanionMODSD2;
 			packageProductDependencies = (
+				C8C67C9128E30DA6003C36C4 /* Zip */,
 			);
 			productName = AppCompanionMODSD2;
 			productReference = C88F80BE28D3538500E569BC /* AppCompanionMODSD2.app */;
 			productType = "com.apple.product-type.application";
+		};
+		C8C67C8028E2DEEA003C36C4 /* AppCompanionTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C8C67C8728E2DEEA003C36C4 /* Build configuration list for PBXNativeTarget "AppCompanionTests" */;
+			buildPhases = (
+				C8C67C7D28E2DEEA003C36C4 /* Sources */,
+				C8C67C7E28E2DEEA003C36C4 /* Frameworks */,
+				C8C67C7F28E2DEEA003C36C4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C8C67C8628E2DEEA003C36C4 /* PBXTargetDependency */,
+			);
+			name = AppCompanionTests;
+			productName = AppCompanionTests;
+			productReference = C8C67C8128E2DEEA003C36C4 /* AppCompanionTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -235,12 +253,12 @@
 				LastSwiftUpdateCheck = 1400;
 				LastUpgradeCheck = 1400;
 				TargetAttributes = {
-					C8671A9228D9E023009716F9 = {
-						CreatedOnToolsVersion = 14.0;
-						TestTargetID = C88F80BD28D3538500E569BC;
-					};
 					C88F80BD28D3538500E569BC = {
 						CreatedOnToolsVersion = 14.0;
+					};
+					C8C67C8028E2DEEA003C36C4 = {
+						CreatedOnToolsVersion = 14.0;
+						TestTargetID = C88F80BD28D3538500E569BC;
 					};
 				};
 			};
@@ -254,25 +272,19 @@
 			);
 			mainGroup = C88F80B528D3538500E569BC;
 			packageReferences = (
+				C8C67C9028E30DA6003C36C4 /* XCRemoteSwiftPackageReference "Zip" */,
 			);
 			productRefGroup = C88F80BF28D3538500E569BC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				C88F80BD28D3538500E569BC /* AppCompanionMODSD2 */,
-				C8671A9228D9E023009716F9 /* EngineTests */,
+				C8C67C8028E2DEEA003C36C4 /* AppCompanionTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		C8671A9128D9E023009716F9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		C88F80BC28D3538500E569BC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -281,6 +293,13 @@
 				C8671A9E28D9FD82009716F9 /* Notes in Resources */,
 				C88F80C928D3538600E569BC /* Preview Assets.xcassets in Resources */,
 				C88F80C628D3538600E569BC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C8C67C7F28E2DEEA003C36C4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,13 +327,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		C8671A8F28D9E023009716F9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		C88F80BA28D3538500E569BC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -328,53 +340,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C8C67C7D28E2DEEA003C36C4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8C67C8428E2DEEA003C36C4 /* AppCompanionTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		C8671A9828D9E023009716F9 /* PBXTargetDependency */ = {
+		C8C67C8628E2DEEA003C36C4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C88F80BD28D3538500E569BC /* AppCompanionMODSD2 */;
-			targetProxy = C8671A9728D9E023009716F9 /* PBXContainerItemProxy */;
+			targetProxy = C8C67C8528E2DEEA003C36C4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		C8671A9928D9E023009716F9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = P3MRZPZ844;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.eddyrogier.EngineTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AppCompanionMODSD2.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AppCompanionMODSD2";
-			};
-			name = Debug;
-		};
-		C8671A9A28D9E023009716F9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = P3MRZPZ844;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.eddyrogier.EngineTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AppCompanionMODSD2.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AppCompanionMODSD2";
-			};
-			name = Release;
-		};
 		C88F80CA28D3538600E569BC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -500,11 +484,12 @@
 				DEVELOPMENT_TEAM = P3MRZPZ844;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Destiny Companion Mods";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.action-games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -529,11 +514,12 @@
 				DEVELOPMENT_TEAM = P3MRZPZ844;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Destiny Companion Mods";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.action-games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -547,18 +533,45 @@
 			};
 			name = Release;
 		};
+		C8C67C8828E2DEEA003C36C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P3MRZPZ844;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eddyrogier.AppCompanionTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AppCompanionMODSD2.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AppCompanionMODSD2";
+			};
+			name = Debug;
+		};
+		C8C67C8928E2DEEA003C36C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P3MRZPZ844;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eddyrogier.AppCompanionTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AppCompanionMODSD2.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AppCompanionMODSD2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C8671A9B28D9E023009716F9 /* Build configuration list for PBXNativeTarget "EngineTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C8671A9928D9E023009716F9 /* Debug */,
-				C8671A9A28D9E023009716F9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		C88F80B928D3538500E569BC /* Build configuration list for PBXProject "AppCompanionMODSD2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -577,7 +590,35 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		C8C67C8728E2DEEA003C36C4 /* Build configuration list for PBXNativeTarget "AppCompanionTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C8C67C8828E2DEEA003C36C4 /* Debug */,
+				C8C67C8928E2DEEA003C36C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C8C67C9028E30DA6003C36C4 /* XCRemoteSwiftPackageReference "Zip" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marmelroy/Zip.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C8C67C9128E30DA6003C36C4 /* Zip */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C8C67C9028E30DA6003C36C4 /* XCRemoteSwiftPackageReference "Zip" */;
+			productName = Zip;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C88F80B628D3538500E569BC /* Project object */;
 }
