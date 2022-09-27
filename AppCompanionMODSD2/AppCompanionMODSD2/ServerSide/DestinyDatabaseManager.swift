@@ -8,28 +8,52 @@
 import Foundation
 import Zip
 
-let defaultFileNameDatabase: String = "DestinyDatabase"
-let defaultFolderNameDatabase: String = String(stringLiteral: "Destiny")
-
 class DestinyDatabaseManager {
+    static let defaultUrlDatabase: String = "https://www.bungie.net/common/destiny2_content/sqlite/fr/world_sql_content_aa813698cf6492188dde4fa1fe4d38d8.content"
+    static var nameDatabase: String = "Destiny" // should be the unique SPM ZIP unzip file inside of folder with the same name of the zip file
+    // --
+    private static var defaultFileNameDatabase: String { nameDatabase }
+    private static var defaultFolderNameDatabase: String { nameDatabase }
+
+    private let manager = FileManager.default
+    private var root: URL? {
+        manager.urls(for: .documentDirectory, in: .userDomainMask).first
+    }
 
     init() {
-        try? removeDatabaseFolder(folderName: "DestinyDatabaseEDDY")
-        try? createDatabaseFolder()
+        _ = generateDataBaseDestiny2()
+    }
+
+    fileprivate func reGenerateDataBaseDestiny2()  {
         try? downloadDatabase { data in
+			// check if data is available before to trash database
             guard let data = data else { return }
+            try? self.removeDatabaseFolder()
+            try? self.createDatabaseFolder()
 
             try? self.generateDatabaseSqlite(with: data)
         }
     }
-
-    func createDatabaseFolder() throws {
-        let manager = FileManager.default
-        guard let root = manager.urls(for: .documentDirectory, in: .userDomainMask).first else {
-            throw DestinyDatabaseManagerError.emptyUrlsArray
+    fileprivate func generateDataBaseDestiny2() -> InfoDataBase {
+        guard let root = root else { return  InfoDataBase(url: "") }
+//        try? removeDatabaseFolder()
+        try? createDatabaseFolder()
+        try? downloadDatabase { data in
+            guard let data = data else { return }
+            try? self.generateDatabaseSqlite(with: data)
         }
 
-        let folderName: String = String(stringLiteral: "DestinyDatabase")
+        let urlPathDatabase = root.appending(component: DestinyDatabaseManager.defaultFolderNameDatabase).appending(component: DestinyDatabaseManager.defaultFileNameDatabase + ".sqlite3").relativePath
+        print(urlPathDatabase)
+        return InfoDataBase(url: urlPathDatabase)
+    }
+}
+
+extension DestinyDatabaseManager {
+
+    private func createDatabaseFolder(folderName: String = defaultFolderNameDatabase) throws {
+        guard let root = root else { throw DestinyDatabaseManagerError.emptyUrlsArray }
+
         let folder = root.appending(component: folderName)
         do {
             try manager.createDirectory(at: folder, withIntermediateDirectories: true)
@@ -37,11 +61,9 @@ class DestinyDatabaseManager {
             throw DestinyDatabaseManagerError.cannotCreateFolder
         }
     }
-    func removeDatabaseFolder(folderName:String) throws {
-        let manager = FileManager.default
-        guard let root = manager.urls(for: .documentDirectory, in: .userDomainMask).first else {
-            throw DestinyDatabaseManagerError.emptyUrlsArray
-        }
+
+    private func removeDatabaseFolder(folderName: String = "\(defaultFolderNameDatabase)") throws {
+        guard let root = root else { throw DestinyDatabaseManagerError.emptyUrlsArray }
 
         do {
             let pathFolderToRemove = root.appending(component: folderName)
@@ -50,27 +72,27 @@ class DestinyDatabaseManager {
             throw DestinyDatabaseManagerError.cannotFindOrDeleteFolder
         }
     }
-    func downloadDatabase(destinyUrl: String = "https://www.bungie.net/common/destiny2_content/sqlite/fr/world_sql_content_aa813698cf6492188dde4fa1fe4d38d8.content", completionHandler: @escaping (_ data: Data?) -> Void) throws {
+
+    private func downloadDatabase(destinyUrl: String = defaultUrlDatabase, completionHandler: @escaping (_ data: Data?) -> Void) throws {
         guard let urlDataBase = URL(string: destinyUrl) else {
             throw DestinyDatabaseManagerError.errorEndPointDatabase
         }
 
         URLSession.shared.dataTask(with: urlDataBase) { data, response, error in
-                completionHandler(data)
+            completionHandler(data)
         }.resume()
     }
-    func generateDatabaseSqlite(fileName: String = "DestinyDatabase.zip",with  dataFile: Data = Data(), at nameOfRootFolder: String = "DestinyDatabase") throws {
+
+    private func generateDatabaseSqlite(fileZipped: String = "\(defaultFileNameDatabase).zip",with  dataFile: Data = Data(), at nameOfRootFolder: String = defaultFolderNameDatabase) throws {
         let extensionToChange: String =  "content"
-        let extensionToAdd: String = String(stringLiteral: "sqlite3")
-        let manager = FileManager.default
-        guard let root = manager.urls(for: .documentDirectory, in: .userDomainMask).first else {
-            throw DestinyDatabaseManagerError.emptyUrlsArray
-        }
+        let extensionToAdd: String =  "sqlite3"
+        guard let root = root else { throw DestinyDatabaseManagerError.emptyUrlsArray }
+
         let rootFolder = root.appending(component: nameOfRootFolder)
 
         // --- Check If the File Exist.
         if manager.fileExists(atPath: rootFolder.relativePath) {
-            let rootFile: URL = rootFolder.appending(component: fileName)
+            let rootFile: URL = rootFolder.appending(component: fileZipped)
 
             // --- Create Zip file with data.
             manager.createFile(atPath: rootFile.relativePath, contents: dataFile)
@@ -89,7 +111,7 @@ class DestinyDatabaseManager {
                 // --- cast the current file for convenience access.
                 let filename = file as NSString // world_sql_content_aa813698cf6492188dde4fa1fe4d38d8.content
 
-                let oldNameDatabase = fileName as NSString // DestinyDatabase.zip
+                let oldNameDatabase = fileZipped as NSString // DestinyDatabase.zip
                 let prefixOldNameDatabase = oldNameDatabase.deletingPathExtension as NSString // "DestinyDatabase"
 
                 guard let newNameDatabase =  prefixOldNameDatabase.appendingPathExtension(extensionToAdd) else { throw DestinyDatabaseManagerError.changesExtensionDatabaseImpossible }
@@ -106,6 +128,10 @@ class DestinyDatabaseManager {
         } else {
             throw DestinyDatabaseManagerError.folderDoesntExist
         }
+    }
+
+    struct InfoDataBase {
+        var url: String
     }
 }
 
