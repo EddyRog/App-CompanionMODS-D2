@@ -18,16 +18,4 @@ final class AppCompanionTests: XCTestCase {
         sut = nil
         super.tearDown()
     }
-
-
-//    func test_database_getDatabase__expect_databaseExist() {
-//        let databaseName = "destinyDatabaseSQLite.sqlite3"
-//        let isDatabaseExist = sut.getdatabase(databaseName)
-//        XCTAssertTrue(isDatabaseExist)
-//    }
-
-    func test_downloadDatabase__expect_folderIsNotEmpty() {
-//        let isFolderEmpty = sut.downloadDatabase()
-//        XCTAssertFalse(isFolderEmpty)
-    }
 }

@@ -8,155 +8,116 @@
 import Foundation
 import Zip
 
-let defaultFileNameDatabase: String = String(stringLiteral: "DestinyDatabase")
+let defaultFileNameDatabase: String = "DestinyDatabase"
 let defaultFolderNameDatabase: String = String(stringLiteral: "Destiny")
 
 class DestinyDatabaseManager {
 
     init() {
-        initDatabaseFromBungie()
+        try? removeDatabaseFolder(folderName: "DestinyDatabaseEDDY")
+        try? createDatabaseFolder()
+        try? downloadDatabase { data in
+            guard let data = data else { return }
 
-//        do {
-//            // setup for un zip
-//            let manager: FileManager = FileManager.default
-//            let path = manager.urls(for: .documentDirectory, in: .userDomainMask)
-//            let folder = path[0].appendingPathComponent(defaultFileNameDatabase)
-//            let filePath = folder.appendingPathComponent(defaultFileNameDatabase + ".zip")
-//
-//			// zip
-//            _ = try Zip.quickUnzipFile(filePath) // unzip destiny.zip
-//            _ = try manager.removeItem(atPath: filePath.relativePath) // remove destiny.zip
-//
-//            // read inside of the file
-//            let files = try? manager.contentsOfDirectory(atPath: folder.relativePath)
-//
-//            // list all the file inside
-//            for file in files ?? [] {
-//                if file.contains(.localizedName(of: ".content".fastestEncoding)) {
-//                    print("ok")
-//                } else {
-//                    print("not")
-//                }
-//
-//				// if the only file containt the extension .content
-//                // rename it
-//                // and change the extension
-//            }
-//        }
-//        catch {
-//            print("Something went wrong")
-//        }
+            try? self.generateDatabaseSqlite(with: data)
+        }
     }
 
-    func initDatabaseFromBungie() {
-        // remove, create folder download, create filezipé
-//		downloadDatabase()
-
-
-        let manager: FileManager = FileManager.default
-        let rootBase = manager.urls(for: .documentDirectory, in: .userDomainMask) // /Users/eddy.rogier/Library/Developer/CoreSimulator/Devices/B0391668-5E0E-48F8-BB63-74762488CBD2/data/Containers/Data/Application/AE6D65B2-C76A-42AC-BD8E-3EF0CED0BE17/Documents/
-        let rootDestinyFolder = rootBase[0].appendingPathComponent(defaultFileNameDatabase)  // /Documents/DestinyDatabase/
-
-        // get zip file
-        let rootFileZip = rootDestinyFolder.appendingPathComponent(defaultFileNameDatabase + ".zip") // Documents/DestinyDatabase/DestinyDatabase.zip
-
-        // unzip it
-        _ = try? Zip.quickUnzipFile(rootFileZip) // unzip destiny.zip
-        // remove zip file
-        _ = try? manager.removeItem(atPath: rootFileZip.relativePath) // remove destiny.zip
-
-        // get folder
-        let files = try? manager.contentsOfDirectory(atPath: rootDestinyFolder.relativePath)
-
-        // parse everything inside
-        for file in files ?? [] {
-            // get only the file with content
-            let filename = file as NSString
-            let extensionFile = filename.pathExtension
-
-            // get file unzip
-            if extensionFile == "content" {
-                let prefix = filename.deletingPathExtension as NSString
-                let newFileName = prefix.appendingPathExtension("sqlite3")
-                // MARK: - Rename
-                try? manager.moveItem(atPath: rootDestinyFolder.appendingPathComponent(file).relativePath,
-                                      toPath: rootDestinyFolder.appendingPathComponent(newFileName ?? "f").relativePath)
-
-            }
+    func createDatabaseFolder() throws {
+        let manager = FileManager.default
+        guard let root = manager.urls(for: .documentDirectory, in: .userDomainMask).first else {
+            throw DestinyDatabaseManagerError.emptyUrlsArray
         }
 
-        // rename it
-
-        // change extension
-    }
-
-	// ✔︎
-    /// ▶ Create.
-    func createFolderInDocumentFromIphone(_ folderName: String = defaultFileNameDatabase) {
-        let manager = FileManager.default
-        guard let url = manager.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
-        let folder = url.appendingPathComponent(folderName)
+        let folderName: String = String(stringLiteral: "DestinyDatabase")
+        let folder = root.appending(component: folderName)
         do {
             try manager.createDirectory(at: folder, withIntermediateDirectories: true)
-        } catch let error {
-            print(error.localizedDescription)
+        } catch {
+            throw DestinyDatabaseManagerError.cannotCreateFolder
         }
     }
-
-    /// ▶ Delete/Remove.
-    func removeFolderInDocumentFromIphone() {
+    func removeDatabaseFolder(folderName:String) throws {
         let manager = FileManager.default
-        guard let url = manager.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
-
+        guard let root = manager.urls(for: .documentDirectory, in: .userDomainMask).first else {
+            throw DestinyDatabaseManagerError.emptyUrlsArray
+        }
 
         do {
-            let pathForRemove = url.appendingPathComponent(defaultFileNameDatabase)
-            try manager.removeItem(atPath: pathForRemove.path)
-        } catch let error {
-            print(error.localizedDescription)
+            let pathFolderToRemove = root.appending(component: folderName)
+            try manager.removeItem(at: pathFolderToRemove)
+        } catch {
+            throw DestinyDatabaseManagerError.cannotFindOrDeleteFolder
         }
     }
+    func downloadDatabase(destinyUrl: String = "https://www.bungie.net/common/destiny2_content/sqlite/fr/world_sql_content_aa813698cf6492188dde4fa1fe4d38d8.content", completionHandler: @escaping (_ data: Data?) -> Void) throws {
+        guard let urlDataBase = URL(string: destinyUrl) else {
+            throw DestinyDatabaseManagerError.errorEndPointDatabase
+        }
 
-    /// ▶ Create a file with content. //!\ ◼︎◼︎◼︎ Important ◼︎◼︎◼︎ /!\\ need to create folder before
-    func createFileInDocumentFromIphone(contentDatabase: Data) {
-        // --- create file.
-        let manager: FileManager = FileManager.default
-        let path = manager.urls(for: .documentDirectory, in: .userDomainMask)
-        let folder = path[0].appendingPathComponent(defaultFileNameDatabase)
-        let file = folder.appendingPathComponent(defaultFileNameDatabase + ".zip")
-        manager.createFile(atPath: file.relativePath, contents: contentDatabase)
-    }
-
-    /// ▶ Download Database in.
-    func downloadDatabase() {
-        guard let urlDataBase = URL(string: "https://www.bungie.net/common/destiny2_content/sqlite/fr/world_sql_content_aa813698cf6492188dde4fa1fe4d38d8.content") else { return }
-        URLSession.shared.dataTask(with: urlDataBase) { (database, response, error) in
-
-            // ****************** save file
-            if let data = database {
-                // there is data
-                self.removeFolderInDocumentFromIphone()
-                self.createFolderInDocumentFromIphone()
-                self.createFileInDocumentFromIphone(contentDatabase: data)
-            }
-//            self.createFileInDocumentFromIphone())
-            // ******************
-
+        URLSession.shared.dataTask(with: urlDataBase) { data, response, error in
+                completionHandler(data)
         }.resume()
-        print("nop")
     }
+    func generateDatabaseSqlite(fileName: String = "DestinyDatabase.zip",with  dataFile: Data = Data(), at nameOfRootFolder: String = "DestinyDatabase") throws {
+        let extensionToChange: String =  "content"
+        let extensionToAdd: String = String(stringLiteral: "sqlite3")
+        let manager = FileManager.default
+        guard let root = manager.urls(for: .documentDirectory, in: .userDomainMask).first else {
+            throw DestinyDatabaseManagerError.emptyUrlsArray
+        }
+        let rootFolder = root.appending(component: nameOfRootFolder)
 
+        // --- Check If the File Exist.
+        if manager.fileExists(atPath: rootFolder.relativePath) {
+            let rootFile: URL = rootFolder.appending(component: fileName)
 
+            // --- Create Zip file with data.
+            manager.createFile(atPath: rootFile.relativePath, contents: dataFile)
 
+            // --- Get the zip file .
+            do { _ = try Zip.quickUnzipFile(rootFile) } catch { throw DestinyDatabaseManagerError.unzipFileImpossible }
+
+            // --- Delete the zipped file.
+            do { _ = try manager.removeItem(at: rootFile) } catch { throw DestinyDatabaseManagerError.removeFileImpossible }
+
+            //
+            // --- Get all files in the folder.
+            guard let files = try? manager.contentsOfDirectory(atPath: rootFolder.relativePath) else { throw DestinyDatabaseManagerError.noFilesFoundsInTheFolder }
+
+            for file in files {
+                // --- cast the current file for convenience access.
+                let filename = file as NSString // world_sql_content_aa813698cf6492188dde4fa1fe4d38d8.content
+
+                let oldNameDatabase = fileName as NSString // DestinyDatabase.zip
+                let prefixOldNameDatabase = oldNameDatabase.deletingPathExtension as NSString // "DestinyDatabase"
+
+                guard let newNameDatabase =  prefixOldNameDatabase.appendingPathExtension(extensionToAdd) else { throw DestinyDatabaseManagerError.changesExtensionDatabaseImpossible }
+
+                if filename.pathExtension == extensionToChange {
+                    do {
+                        // --- Rename database of destiny.
+                        try manager.moveItem(atPath: rootFolder.appending(path: file).relativePath ,
+                                             toPath: rootFolder.appending(path: newNameDatabase).relativePath)
+                    } catch {  throw DestinyDatabaseManagerError.cannotRenameFile }
+                }
+            }
+
+        } else {
+            throw DestinyDatabaseManagerError.folderDoesntExist
+        }
+    }
 }
 
-// ✘
-extension  DestinyDatabaseManager {
-    /// ▶ Get.
-    func getPathDataBase(_ databaseName: String = defaultFileNameDatabase) {
-        let cheminDossier = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-        debugPrint("dee L\(#line) 🏵 ------->  ⬇️")
-        debugPrint("dee L\(#line) 🏵 ------->  ➡️ ", cheminDossier?.debugDescription as Any , "◀️")
-        debugPrint("dee L\(#line) 🏵 ------->  ⬆️ ")
-    }
+enum DestinyDatabaseManagerError: Error {
+    case cannotCreateFolder
+    case emptyUrlsArray
+    case cannotFindOrDeleteFolder
+    case errorEndPointDatabase
+    case folderDoesntExist
+    case unzipFileImpossible
+    case removeFileImpossible
+    case noFilesFoundsInTheFolder
+    case cannotRenameFile
+    case changesExtensionDatabaseImpossible
 }
