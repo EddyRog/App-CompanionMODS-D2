@@ -14,14 +14,14 @@ class DestinyDatabaseManager {
     // --
     private static var defaultFileNameDatabase: String { nameDatabase }
     private static var defaultFolderNameDatabase: String { nameDatabase }
-
     private let manager = FileManager.default
     private var root: URL? {
         manager.urls(for: .documentDirectory, in: .userDomainMask).first
     }
 
     init() {
-        _ = generateDataBaseDestiny2()
+        let obj = generateDataBaseDestiny2()
+        print(obj.url)
     }
 
     fileprivate func reGenerateDataBaseDestiny2()  {
@@ -44,7 +44,6 @@ class DestinyDatabaseManager {
         }
 
         let urlPathDatabase = root.appending(component: DestinyDatabaseManager.defaultFolderNameDatabase).appending(component: DestinyDatabaseManager.defaultFileNameDatabase + ".sqlite3").relativePath
-        print(urlPathDatabase)
         return InfoDataBase(url: urlPathDatabase)
     }
 }

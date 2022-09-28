@@ -9,7 +9,8 @@ import SwiftUI
 struct ContentView: View {
     @State private var selectedTabIndex = 1
     init() {
-        DestinyDatabaseManager()
+//        DestinyDatabaseManager()
+        PersistentModsStorage()
     }
 
 

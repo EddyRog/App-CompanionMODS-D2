@@ -33,17 +33,6 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C8671A9228D9E023009716F9"
-               BuildableName = "EngineTests.xctest"
-               BlueprintName = "EngineTests"
-               ReferencedContainer = "container:AppCompanionMODSD2.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO"
-            parallelizable = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
                BlueprintIdentifier = "C8C67C8028E2DEEA003C36C4"
                BuildableName = "AppCompanionTests.xctest"
                BlueprintName = "AppCompanionTests"
