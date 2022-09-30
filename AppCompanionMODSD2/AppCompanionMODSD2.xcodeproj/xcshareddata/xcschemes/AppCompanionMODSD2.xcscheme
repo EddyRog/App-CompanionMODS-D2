@@ -38,6 +38,11 @@
                BlueprintName = "AppCompanionTests"
                ReferencedContainer = "container:AppCompanionMODSD2.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "AppCompanionTests">
+               </Test>
+            </SkippedTests>
          </TestableReference>
       </Testables>
    </TestAction>

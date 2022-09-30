@@ -10,5 +10,4 @@ import Foundation
 enum Constant: String {
     case urlbase = "https://www.bungie.net/"
     case jsonDestinyNodeStepSummaryDefinition = "common/destiny2_content/json/fr/DestinyPlaceDefinition-c749fcce-2388-496f-b5a6-4859830183e4.json"
-//    case jsonDestinyNodeStepSummaryDefinition = "common/destiny2_content/json/fr/DestinyNodeStepSummaryDefinition-c749fcce-2388-496f-b5a6-4859830183e4.json"
 }
