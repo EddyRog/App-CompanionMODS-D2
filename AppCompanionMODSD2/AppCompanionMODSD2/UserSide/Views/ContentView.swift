@@ -79,7 +79,9 @@ struct Current: View {
                     ModsPresentation(imageName: "Default", titleMod: item)
                 }
             }
-        }.onAppear { }
+        }.onAppear {
+            Destiny2SQLITEManager()
+        }
     }
 }
 

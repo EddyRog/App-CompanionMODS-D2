@@ -1,11 +1,32 @@
 Need :
-** Download sqliteDatabase
-get endpoint
-create folder in storageMemory
-download database.content
-change database.content to database.zip
-(new file create)
-rename it
 
-Mods :
-	
+ALL COLLECTION :
+	https://www.light.gg/db/legend/3790247699/collections/3509235358/mods/615947643/armor/
+
+HEAD mod collection (tous les mods Tete sans les types de dégât)
+	https://www.light.gg/db/legend/3790247699/collections/3509235358/mods/615947643/armor/2819021773/head/
+
+Arms (main)
+	https://www.light.gg/db/legend/3790247699/collections/3509235358/mods/615947643/armor/2390416266/arms/
+
+
+
+All.Manifest :  https://data.destinysets.com/api/Destiny2.GetDestinyManifest
+
+Collection().Mods() : https://www.light.gg/db/legend/3790247699/collections/3509235358/mods/
+--
+Collection().Mods().Armor() : https://www.light.gg/db/legend/3790247699/collections/3509235358/mods/615947643/armor/
+Collection().Mods().Equipment() : https://www.light.gg/db/legend/3790247699/collections/3509235358/mods/2980752272/equipment/
+Collection().Mods().Weapons() : https://www.light.gg/db/legend/3790247699/collections/3509235358/mods/1627803277/weapons/
+
+*********** How To get the mod *******************
+* MODS
+	* ARMOR-EQUIPEMENT-WEAPON
+	-> (retrouve la collection dans la table `DestinyPresentationNodeDefinition`) with HASH/ID : 3509235358  (get the JSON, after follow the sub json (see the next lines)
+		-> ARMURE (HASHID : 615947643)
+			-> HEAD (HASHID : 2819021773, in `DestinyPresentationNodeDefinition`)
+   				-> AllMODS
+       				-> Mods: [Hands-ON] ( HASHID : 1427431558, in `DestinyCollectibleDefinition`)
+           				-> Details Mods: [Hands-ON] ( HASHID : 1427431558, in `DestinyInventoryItemDefinition`)
+               				-> SubDetails likes [Hands-ON].energyTypeHash()  (HASHID : 728351493 in `DestinyEnergyTypeDefinition`)
+
