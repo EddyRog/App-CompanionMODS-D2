@@ -1,45 +1,32 @@
 Need :
 
-Mods :
-DestinyGenderDefinition : genre
-DestinyEnergyTypeDefinition : type of element only'
-DestinyCollectibleDefinition
-	Dexterité au fusil automatique
-	idTable = -468972071
-	hash 100050722
-	plug : {
-		energyHash : 1198124803 ( corresponse a IDTable de DestinyEnergyTypeDefinition)
-	}
-}
-
-
-
-ALL MANIFEST
-https://data.destinysets.com/api/Destiny2.GetDestinyManifest
-
-
-	
 ALL COLLECTION :
-https://www.light.gg/db/legend/3790247699/collections/3509235358/mods/615947643/armor/
-hash : 615947643 a filtrer dans
-PresentationNodeDefinition ( le json comporte une cle presentationnode)
+	https://www.light.gg/db/legend/3790247699/collections/3509235358/mods/615947643/armor/
 
-
-HEAD mod collection
-https://www.light.gg/db/legend/3790247699/collections/3509235358/mods/615947643/armor/2819021773/head/
-hash : 2819021773
-DestinyCollectibleDefinition
-Filtrer la table avec le hash pour avoir les mods
-
-
+HEAD mod collection (tous les mods Tete sans les types de dégât)
+	https://www.light.gg/db/legend/3790247699/collections/3509235358/mods/615947643/armor/2819021773/head/
 
 Arms (main)
-https://www.light.gg/db/legend/3790247699/collections/3509235358/mods/615947643/armor/2390416266/arms/
-hash": 2390416266,
-DestinyCollectibleDefinition
+	https://www.light.gg/db/legend/3790247699/collections/3509235358/mods/615947643/armor/2390416266/arms/
 
 
-Note :
-Voir les clé des childrens pour trouver la table
-Parent node : permert de voir les connections parents
-objectiveHash : en lien avec les quest
+
+All.Manifest :  https://data.destinysets.com/api/Destiny2.GetDestinyManifest
+
+Collection().Mods() : https://www.light.gg/db/legend/3790247699/collections/3509235358/mods/
+--
+Collection().Mods().Armor() : https://www.light.gg/db/legend/3790247699/collections/3509235358/mods/615947643/armor/
+Collection().Mods().Equipment() : https://www.light.gg/db/legend/3790247699/collections/3509235358/mods/2980752272/equipment/
+Collection().Mods().Weapons() : https://www.light.gg/db/legend/3790247699/collections/3509235358/mods/1627803277/weapons/
+
+*********** How To get the mod *******************
+* MODS
+	* ARMOR-EQUIPEMENT-WEAPON
+	-> (retrouve la collection dans la table `DestinyPresentationNodeDefinition`) with HASH/ID : 3509235358  (get the JSON, after follow the sub json (see the next lines)
+		-> ARMURE (HASHID : 615947643)
+			-> HEAD (HASHID : 2819021773, in `DestinyPresentationNodeDefinition`)
+   				-> AllMODS
+       				-> Mods: [Hands-ON] ( HASHID : 1427431558, in `DestinyCollectibleDefinition`)
+           				-> Details Mods: [Hands-ON] ( HASHID : 1427431558, in `DestinyInventoryItemDefinition`)
+               				-> SubDetails likes [Hands-ON].energyTypeHash()  (HASHID : 728351493 in `DestinyEnergyTypeDefinition`)
+
