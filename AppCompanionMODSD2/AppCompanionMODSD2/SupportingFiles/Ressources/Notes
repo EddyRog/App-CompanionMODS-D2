@@ -1,11 +1,45 @@
 Need :
-** Download sqliteDatabase
-get endpoint
-create folder in storageMemory
-download database.content
-change database.content to database.zip
-(new file create)
-rename it
 
 Mods :
+DestinyGenderDefinition : genre
+DestinyEnergyTypeDefinition : type of element only'
+DestinyCollectibleDefinition
+	Dexterité au fusil automatique
+	idTable = -468972071
+	hash 100050722
+	plug : {
+		energyHash : 1198124803 ( corresponse a IDTable de DestinyEnergyTypeDefinition)
+	}
+}
+
+
+
+ALL MANIFEST
+https://data.destinysets.com/api/Destiny2.GetDestinyManifest
+
+
 	
+ALL COLLECTION :
+https://www.light.gg/db/legend/3790247699/collections/3509235358/mods/615947643/armor/
+hash : 615947643 a filtrer dans
+PresentationNodeDefinition ( le json comporte une cle presentationnode)
+
+
+HEAD mod collection
+https://www.light.gg/db/legend/3790247699/collections/3509235358/mods/615947643/armor/2819021773/head/
+hash : 2819021773
+DestinyCollectibleDefinition
+Filtrer la table avec le hash pour avoir les mods
+
+
+
+Arms (main)
+https://www.light.gg/db/legend/3790247699/collections/3509235358/mods/615947643/armor/2390416266/arms/
+hash": 2390416266,
+DestinyCollectibleDefinition
+
+
+Note :
+Voir les clé des childrens pour trouver la table
+Parent node : permert de voir les connections parents
+objectiveHash : en lien avec les quest

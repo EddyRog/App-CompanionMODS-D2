@@ -27,7 +27,7 @@ class Destiny2SQLITEManager {
 
         let manager: FileManager = FileManager.default
         guard let documentFolder = manager.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil } // /Documents/
-        let locationDatabase: URL = documentFolder.appending(component: "Destiny/Destiny.sqlite3")
+        let locationDatabase: URL = documentFolder.appending(component: "\(nameFolderDestiny)/\(nameFolderDestiny).sqlite3")
 
 
         // open database
@@ -67,6 +67,8 @@ class Destiny2SQLITEManager {
         }
         sqlite3_finalize(selectStatment)
     }
+
+	// helper
     private func printJson(_ value: String) {
         if let prettyJson = value.data(using: .utf8)?.prettyPrintedJSONString {
             debugPrint(prettyJson, terminator: "\n \n ⬇️⬇️⬇️⬇️ \n")
