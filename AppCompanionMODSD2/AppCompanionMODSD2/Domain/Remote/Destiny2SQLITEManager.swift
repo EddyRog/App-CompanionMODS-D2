@@ -39,6 +39,8 @@ class Destiny2SQLITEManager {
             return db
         }
     }
+
+    // TODO: ❎ Extract ❎
     private func prepareReadTable(with table: DestinyTableDatabase) {
         var selectStatment: OpaquePointer? = nil
         let selectSQL = "SELECT * FROM \(table.rawValue)"
@@ -68,7 +70,7 @@ class Destiny2SQLITEManager {
         sqlite3_finalize(selectStatment)
     }
 
-	// helper
+    // helper
     private func printJson(_ value: String) {
         if let prettyJson = value.data(using: .utf8)?.prettyPrintedJSONString {
             debugPrint(prettyJson, terminator: "\n \n ⬇️⬇️⬇️⬇️ \n")
@@ -78,28 +80,28 @@ class Destiny2SQLITEManager {
     }
 
 
+
     // ==================
     // MARK: - Downloading database operation
     // ==================
-	/// ▶ Download once the database from Destiny2 server and generate sqlite3 database
-    /// the Data it s save into `UserDefault`
-    /// You can generate many time as you want the sqlite file.
-    /// Use `refreshDatabase()` to refresh the data base
+    /// ▶ Download once the database from Destiny2 server and generate sqlite3 database
     func loadDatabase() {
-    getDatabase()
-    // --- Generate sqliteDatabase.
-    if let databaseData = DestinyUserDefault.getData() {
-        try? createFolderForDatabaseDownloaded()
-        try? generateSqliteDatabase(from: databaseData)
-    } else {
-        debugPrint("dee L-\(#line) 🚗💨🚓 cannot generate database, userdefault empty 🥎")
-        // !!!:  download database and retry ! ⭐️❎
+        /// the Data it s save into `UserDefault`
+        /// You can generate many time as you want the sqlite file.
+        /// Use `refreshDatabase()` to refresh the data base
+        getDatabase()
+        // --- Generate sqliteDatabase.
+        if let databaseData = DestinyUserDefault.getData() {
+            try? createFolderForDatabaseDownloaded()
+            try? generateSqliteDatabase(from: databaseData)
+        } else {
+            debugPrint("dee L-\(#line) 🚗💨🚓 cannot generate database, userdefault empty 🥎")
+            // !!!:  download database and retry ! ⭐️❎
+        }
     }
-}
-
     /// ▶ if the database on the Destiny servers is available and the download completed successfully
-    ///  then the old database and old SQL files will be overwritten by the new ones.
     func refreshDatabase() {
+        ///  then the old database and old SQL files will be overwritten by the new ones.
         debugPrint("dee L-\(#line) 🚗💨🚓 refresh data running 🥎")
         try? downloadDatabase(url: Destiny2SQLITEManager.defaultUrlDatabase) { result in
             switch result {
@@ -121,7 +123,6 @@ class Destiny2SQLITEManager {
 }
 
 extension Destiny2SQLITEManager {
-    // --
     private func getDatabase() {
         if DestinyUserDefault.isDataExist() {
             debugPrint("dee L-\(#line) 🚗💨🚓 data already exist 🥎")
@@ -228,7 +229,6 @@ extension Destiny2SQLITEManager {
         }
     }
 }
-
 enum Destiny2Error: Error {
     case errorUrl
     case errorFetching(reason: String)
@@ -239,18 +239,14 @@ enum Destiny2Error: Error {
     case cannotFindFilesInTheFolder
     case cannotFindOrDeleteFolder
 }
-
-// ==================
-// MARK: - Destiny User Default
-// use to save data download from serveur of destiny
-// ==================
-
 enum DestinyTableDatabase: String {
     case DestinyGenderDefinition
     case DestinyClassDefinition
 }
-
-
+// ==================
+// MARK: - Destiny User Default
+// use to save data download from serveur of destiny
+// ==================
 struct DestinyUserDefault {
     /// ▶ GET the key user default.
     fileprivate static let userDefaultKey: String = String(stringLiteral:  "Destiny2Data")
