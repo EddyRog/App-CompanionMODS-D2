@@ -17,6 +17,9 @@
 		C88F80C428D3538500E569BC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F80C328D3538500E569BC /* ContentView.swift */; };
 		C88F80C628D3538600E569BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C88F80C528D3538600E569BC /* Assets.xcassets */; };
 		C88F80C928D3538600E569BC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C88F80C828D3538600E569BC /* Preview Assets.xcassets */; };
+		C89FD18128EB045700030A3D /* Current.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89FD18028EB045700030A3D /* Current.swift */; };
+		C89FD18328EB04BB00030A3D /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89FD18228EB04BB00030A3D /* Grid.swift */; };
+		C89FD18628EB05CD00030A3D /* Mod.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89FD18528EB05CD00030A3D /* Mod.swift */; };
 		C8C67C8428E2DEEA003C36C4 /* AppCompanionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C67C8328E2DEEA003C36C4 /* AppCompanionTests.swift */; };
 		C8C67C9228E30DA6003C36C4 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = C8C67C9128E30DA6003C36C4 /* Zip */; };
 		C8D665A128E4921400243307 /* Extension+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D665A028E4921400243307 /* Extension+Data.swift */; };
@@ -45,6 +48,9 @@
 		C88F80C328D3538500E569BC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C88F80C528D3538600E569BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C88F80C828D3538600E569BC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C89FD18028EB045700030A3D /* Current.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Current.swift; sourceTree = "<group>"; };
+		C89FD18228EB04BB00030A3D /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
+		C89FD18528EB05CD00030A3D /* Mod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mod.swift; sourceTree = "<group>"; };
 		C8C67C8128E2DEEA003C36C4 /* AppCompanionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppCompanionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8C67C8328E2DEEA003C36C4 /* AppCompanionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCompanionTests.swift; sourceTree = "<group>"; };
 		C8D665A028E4921400243307 /* Extension+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Data.swift"; sourceTree = "<group>"; };
@@ -90,6 +96,8 @@
 		C80F73C028E75FA400733294 /* Current */ = {
 			isa = PBXGroup;
 			children = (
+				C89FD18028EB045700030A3D /* Current.swift */,
+				C89FD18428EB05BA00030A3D /* SubViews */,
 			);
 			path = Current;
 			sourceTree = "<group>";
@@ -97,6 +105,7 @@
 		C80F73C128E75FCC00733294 /* Grid */ = {
 			isa = PBXGroup;
 			children = (
+				C89FD18228EB04BB00030A3D /* Grid.swift */,
 			);
 			path = Grid;
 			sourceTree = "<group>";
@@ -146,6 +155,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		C89FD18428EB05BA00030A3D /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				C89FD18528EB05CD00030A3D /* Mod.swift */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
 		C8C67C7628E2117F003C36C4 /* UserSide */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +184,7 @@
 		C8C67C7A28E2DB6B003C36C4 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				C80F73BD28E7126200733294 /* Remote */,
 				C80F73AD28E6EECB00733294 /* Models */,
 			);
 			path = Domain;
@@ -205,7 +223,6 @@
 		C8FF096628DC643D00BF94A7 /* ServerSide */ = {
 			isa = PBXGroup;
 			children = (
-				C80F73BD28E7126200733294 /* Remote */,
 			);
 			path = ServerSide;
 			sourceTree = "<group>";
@@ -352,10 +369,13 @@
 				C88F80C428D3538500E569BC /* ContentView.swift in Sources */,
 				C8D665A128E4921400243307 /* Extension+Data.swift in Sources */,
 				C8FF096C28DC744B00BF94A7 /* Constant.swift in Sources */,
+				C89FD18128EB045700030A3D /* Current.swift in Sources */,
 				C80F73BF28E7155700733294 /* Destiny2SQLITEManager.swift in Sources */,
 				C80F73AF28E6EEE300733294 /* DestinyModels.swift in Sources */,
+				C89FD18628EB05CD00030A3D /* Mod.swift in Sources */,
 				C88F80C228D3538500E569BC /* AppCompanionMODSD2App.swift in Sources */,
 				C80F73BC28E7115E00733294 /* Destiny2API.swift in Sources */,
+				C89FD18328EB04BB00030A3D /* Grid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

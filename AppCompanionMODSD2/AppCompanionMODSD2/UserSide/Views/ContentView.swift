@@ -12,7 +12,6 @@ import SwiftUI
 class ViewModelMods: ObservableObject {
 	@Published var items =  ["A", "B", "C"]
 }
-
 public class Singleton: ObservableObject {
     public static let sharedInstance = Singleton()
     @Published var dataMods = ViewModelMods()
@@ -26,24 +25,24 @@ struct ContentView: View {
 
     // SwiftUI
     var body: some View {
-        TabView {
+        TabView(selection: $selectedTabIndex) {
             NavigationView {
                 Current()
             }
             .tabItem {
                 Image(systemName: "wrench.and.screwdriver")
                 Text("Current for Test")
-            }
+            }.tag(0)
 
 
             NavigationView {
                 VStack {
-                 Text("Grid")
+                 Grid()
                 }
-            }
+            }.tag(1)
             .tabItem {
                 Image(systemName: "square.grid.3x1.below.line.grid.1x2")
-                Text("grid")
+                Text("Grid")
             }
 
 
@@ -52,7 +51,7 @@ struct ContentView: View {
                     Text("Mods")
                     Text("Mods")
                 }
-            }
+            }.tag(2)
             .tabItem {
                 Image(systemName: "square.stack")
                 Text("All Mods")
@@ -63,41 +62,5 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-    }
-}
-
-// ==================
-// MARK: - Subview
-// ==================
-struct Current: View {
-    @StateObject var viewModel = Singleton.sharedInstance.dataMods
-
-    var body: some View {
-        VStack {
-            List {
-                ForEach(viewModel.items, id: \.self) { item in
-                    ModsPresentation(imageName: "Default", titleMod: item)
-                }
-            }
-        }.onAppear {
-            Destiny2SQLITEManager()
-        }
-    }
-}
-
-// ==================
-// MARK: - CustomView
-// ==================
-struct ModsPresentation: View {
-    var imageName: String
-    var titleMod: String
-
-    var body: some View {
-        HStack {
-            Image(imageName)
-                .resizable()
-                .frame(width: 100, height: 100)
-            Text(titleMod)
-        }
     }
 }
