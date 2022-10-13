@@ -29,7 +29,6 @@ struct Grid: View {
                                 .frame(width: (geoGeneral.size.width / 6) * 1, height: (geoGeneral.size.width / 6) * 1)
                                 .background(.white)
 
-
                                 // RIGHT  -------
                                 VStack(spacing: 0) {
                                     // * Right-Top
