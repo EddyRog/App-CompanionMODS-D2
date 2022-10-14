@@ -20,52 +20,112 @@ struct Grid: View {
                             // Left and Right
                             HStack(alignment: .bottom, spacing: 0) {
 
+                                let maxMods = 6
                                 // LEFT
                                 Group {
                                     // MODS x 1
-                                    Image("Default")
+                                    Image("Empty")
                                         .resizable()
                                 }
-                                .frame(width: (geoGeneral.size.width / 6) * 1, height: (geoGeneral.size.width / 6) * 1)
+                                .frame(width: (geoGeneral.size.width / CGFloat(maxMods)) * 1, height: (geoGeneral.size.width / CGFloat(maxMods)) * 1)
                                 .background(.white)
 
                                 // RIGHT  -------
                                 VStack(spacing: 0) {
-                                    // * Right-Top
-                                    // ENERGY
-                                    let width5TO6: CGFloat = (geoGeneral.size.width) * (5/6)
+                                    let countMods: Int = maxMods - 1
+                                    let width1TO6: CGFloat = (geoGeneral.size.width) * (1 / CGFloat(maxMods))
+                                    let width5TO6: CGFloat = (geoGeneral.size.width) * (CGFloat(countMods) / CGFloat(maxMods))
                                     let width2TO12: CGFloat = (2/12)
 
+                                    // * Right-Top
+                                    // ENERGY
                                     GeometryReader { geoEnergyFrame in
-                                        HStack(spacing: 0) {
+                                        HStack(alignment: .top, spacing: 0) {
+                                            // ENERGY.Right-Top.Leading
                                             let widthElement: CGFloat = (geoEnergyFrame.size.width / 12) * 2
                                             let heightElement: CGFloat = (geoEnergyFrame.size.width / 12) * 2
-                                            Text("left")
+                                            Image("EnergyStase")
+                                                .resizable()
                                                 .frame(width: widthElement, height: heightElement)
-                                            .background(.red)
+                                                .background(.red)
 
+                                            // ENERGY.Right-Top.trailing
                                             let widthEnergy: CGFloat = (geoEnergyFrame.size.width / 12) * 10
                                             let heightEnergy: CGFloat = (geoEnergyFrame.size.width / 12) * 2
-                                            Text("right")
-                                                .frame(width: widthEnergy, height: heightEnergy)
-                                            .background(.green)
+
+                                            // ********
+                                            // es 🚦🌁🏝☀️🏖🐬🏝🏞🏜🚦
+                                            // Container (Text energy + rectanle energy )
+                                            VStack(alignment: .leading, spacing: 0) {
+                                                Spacer()
+                                                // Text energy
+                                                Text("8/10 ENERGY")
+                                                    .font(.footnote)
+                                                    .fontWeight(.bold)
+                                                    .foregroundColor(Color.white)
+                                                    .multilineTextAlignment(.leading)
+                                                    .lineLimit(0)
+                                                    .controlSize(.mini)
+
+                                                // Rectangle energy
+                                                HStack(spacing: 0) {
+                                                    ForEach(0..<10) { value in
+                                                        Rectangle()
+                                                            .fill(value % 2 == 0 ? .white: .orange)
+                                                            .frame(height: heightEnergy * (1 / 4))
+                                                    }
+                                                    //                                                // Energy (Square)
+                                                    //                                                // left Element Type
+                                                    //                                                Rectangle()
+                                                    //                                                    .fill(Color.blue)
+                                                    //                                                    .frame(width: geo.size.width * 0.1, height: geo.size.width * 0.1)
+                                                    //
+                                                    //                                                // Energy (Text) + square
+                                                    //                                                VStack(alignment: .leading, spacing: 0) {
+                                                    //                                                    // right
+                                                    //                                                    Text("8/10 ENERGY")
+                                                    //                                                        .font(.footnote)
+                                                    //                                                        .fontWeight(.bold)
+                                                    //                                                        .foregroundColor(Color.white)
+                                                    //                                                        .lineLimit(0)
+                                                    //                                                        .controlSize(/*@START_MENU_TOKEN@*/.mini/*@END_MENU_TOKEN@*/)
+                                                    //
+                                                    //                                                    HStack(alignment: .lastTextBaseline, spacing: spacingElement) {
+                                                    //                                                        ForEach(0..<10) { value in
+                                                    //                                                            Rectangle()
+                                                    //                                                                .fill(value % 2 == 0 ? .white : .orange)
+                                                    //                                                                .frame(width: ((geo.size.width * 0.9) / 10 ) - (spacingElement) + (spacingElement / 10), height: 15)
+                                                    //
+                                                    //                                                        }
+                                                    //                                                    }
+                                                    //                                                }
+                                                }
+                                            }
+
+
+                                            // $$$$$$$
+//                                            Text("right")
+//                                                .frame(width: widthEnergy, height: heightEnergy)
+//                                        	    .background(.green)
                                         }
                                     }
                                     .background(.black)
                                     .foregroundColor(.white)
-                                    .frame(width: (geoGeneral.size.width / 6) * 5, height: ( width5TO6 * width2TO12) )
+                                    .frame(width: width5TO6, height: ( width5TO6 * width2TO12) )
+
 
                                     // * Right-Bottom
                                     // MODS
                                     HStack(spacing: 0) {
-                                        ForEach(0..<5) { _ in
+//                                        ForEach(0..<5) { _ in
+                                        ForEach(0..<countMods, id: \.self) { _ in
                                             Image("Default")
                                                 .resizable()
-                                                .frame(width: (geoGeneral.size.width / 6) * 1, height: (geoGeneral.size.width / 6) * 1)
+                                                .frame(width: width1TO6, height: width1TO6)
                                                 .padding(0)
                                         }
                                     }
-                                    .frame(width: (geoGeneral.size.width / 6) * 5)
+                                    .frame(width: width5TO6)
                                     .background(.black)
                                     .foregroundColor(.white)
                                 }
@@ -84,7 +144,12 @@ struct Grid: View {
 struct Grid_Previews: PreviewProvider {
     static var previews: some View {
         Grid()
+            .previewDevice("iPhone 13")
+        Grid()
+            .previewDevice("iPhone 8")
             .background(Color.brown)
+        Grid()
+            .previewDevice("iPad mini (6th generation)")
     }
 }
 
