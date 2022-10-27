@@ -138,6 +138,8 @@
 		C88F80C028D3538500E569BC /* AppCompanionMODSD2 */ = {
 			isa = PBXGroup;
 			children = (
+				C88F80C128D3538500E569BC /* AppCompanionMODSD2App.swift */,
+				C8FF096228DC63B300BF94A7 /* Views */,
 				C8C67C7628E2117F003C36C4 /* UserSide */,
 				C8C67C7A28E2DB6B003C36C4 /* Domain */,
 				C8FF096628DC643D00BF94A7 /* ServerSide */,
@@ -166,8 +168,6 @@
 		C8C67C7628E2117F003C36C4 /* UserSide */ = {
 			isa = PBXGroup;
 			children = (
-				C88F80C128D3538500E569BC /* AppCompanionMODSD2App.swift */,
-				C8FF096228DC63B300BF94A7 /* Views */,
 			);
 			path = UserSide;
 			sourceTree = "<group>";
