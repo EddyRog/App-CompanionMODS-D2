@@ -37,7 +37,22 @@ struct ContentView: View {
 
             NavigationView {
                 VStack {
-                 Grid()
+                    Grid()
+                        .onAppear {
+
+                            let service = DestinyService(DestinyDAO())
+                            service.downloadContentDatabaseForMods0 { result in
+                                switch result {
+                                    case .success(_):
+                                        print("ok")
+                                        selectedTabIndex = 1
+                                    case .failure(_):
+                                        print("not")
+                                }
+                            }
+                        print("Grid appear")
+
+                    }
                 }
             }.tag(1)
             .tabItem {

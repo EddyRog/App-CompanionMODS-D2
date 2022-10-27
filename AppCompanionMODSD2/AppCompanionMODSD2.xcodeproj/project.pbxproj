@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		C80F73AF28E6EEE300733294 /* DestinyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80F73AE28E6EEE300733294 /* DestinyModels.swift */; };
-		C80F73B528E6FD7800733294 /* APITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80F73B428E6FD7800733294 /* APITests.swift */; };
 		C80F73BC28E7115E00733294 /* Destiny2API.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80F73BB28E7115E00733294 /* Destiny2API.swift */; };
 		C80F73BF28E7155700733294 /* Destiny2SQLITEManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80F73BE28E7155700733294 /* Destiny2SQLITEManager.swift */; };
 		C8671A9E28D9FD82009716F9 /* Notes in Resources */ = {isa = PBXBuildFile; fileRef = C8671A9D28D9FD82009716F9 /* Notes */; };
@@ -20,9 +19,13 @@
 		C89FD18128EB045700030A3D /* Current.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89FD18028EB045700030A3D /* Current.swift */; };
 		C89FD18328EB04BB00030A3D /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89FD18228EB04BB00030A3D /* Grid.swift */; };
 		C89FD18628EB05CD00030A3D /* Mod.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89FD18528EB05CD00030A3D /* Mod.swift */; };
-		C8C67C8428E2DEEA003C36C4 /* AppCompanionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C67C8328E2DEEA003C36C4 /* AppCompanionTests.swift */; };
 		C8C67C9228E30DA6003C36C4 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = C8C67C9128E30DA6003C36C4 /* Zip */; };
 		C8D665A128E4921400243307 /* Extension+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D665A028E4921400243307 /* Extension+Data.swift */; };
+		C8D95097290ACC82001AA4DE /* DestinyDAOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D95096290ACC82001AA4DE /* DestinyDAOTests.swift */; };
+		C8D95099290AD34D001AA4DE /* DestinyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D95098290AD34D001AA4DE /* DestinyService.swift */; };
+		C8D9509C290AE7FF001AA4DE /* DestinyDAOStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D9509B290AE7FF001AA4DE /* DestinyDAOStub.swift */; };
+		C8D950A1290AEA30001AA4DE /* IDestinyDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D950A0290AEA30001AA4DE /* IDestinyDAO.swift */; };
+		C8D950A6290AEC62001AA4DE /* DestinyDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D950A5290AEC62001AA4DE /* DestinyDAO.swift */; };
 		C8FF096C28DC744B00BF94A7 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FF096B28DC744B00BF94A7 /* Constant.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,7 +41,6 @@
 
 /* Begin PBXFileReference section */
 		C80F73AE28E6EEE300733294 /* DestinyModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinyModels.swift; sourceTree = "<group>"; };
-		C80F73B428E6FD7800733294 /* APITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITests.swift; sourceTree = "<group>"; };
 		C80F73BB28E7115E00733294 /* Destiny2API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destiny2API.swift; sourceTree = "<group>"; };
 		C80F73BE28E7155700733294 /* Destiny2SQLITEManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destiny2SQLITEManager.swift; sourceTree = "<group>"; };
 		C8671A9D28D9FD82009716F9 /* Notes */ = {isa = PBXFileReference; lastKnownFileType = text; path = Notes; sourceTree = "<group>"; };
@@ -52,8 +54,12 @@
 		C89FD18228EB04BB00030A3D /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
 		C89FD18528EB05CD00030A3D /* Mod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mod.swift; sourceTree = "<group>"; };
 		C8C67C8128E2DEEA003C36C4 /* AppCompanionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppCompanionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C8C67C8328E2DEEA003C36C4 /* AppCompanionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCompanionTests.swift; sourceTree = "<group>"; };
 		C8D665A028E4921400243307 /* Extension+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Data.swift"; sourceTree = "<group>"; };
+		C8D95096290ACC82001AA4DE /* DestinyDAOTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinyDAOTests.swift; sourceTree = "<group>"; };
+		C8D95098290AD34D001AA4DE /* DestinyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinyService.swift; sourceTree = "<group>"; };
+		C8D9509B290AE7FF001AA4DE /* DestinyDAOStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DestinyDAOStub.swift; path = AppCompanionTests/DestinyDAOStub.swift; sourceTree = SOURCE_ROOT; };
+		C8D950A0290AEA30001AA4DE /* IDestinyDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDestinyDAO.swift; sourceTree = "<group>"; };
+		C8D950A5290AEC62001AA4DE /* DestinyDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinyDAO.swift; sourceTree = "<group>"; };
 		C8FF096B28DC744B00BF94A7 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,6 +123,37 @@
 			path = "All Mods";
 			sourceTree = "<group>";
 		};
+		C85CA216290ACA6F00822DE6 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				C88F80C128D3538500E569BC /* AppCompanionMODSD2App.swift */,
+				C8FF096228DC63B300BF94A7 /* Views */,
+			);
+			name = Modules;
+			sourceTree = "<group>";
+		};
+		C85CA217290ACA8900822DE6 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		C85CA218290ACA9200822DE6 /* UserSide */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UserSide;
+			sourceTree = "<group>";
+		};
+		C85CA219290ACA9900822DE6 /* ServerSide */ = {
+			isa = PBXGroup;
+			children = (
+				C8D95096290ACC82001AA4DE /* DestinyDAOTests.swift */,
+			);
+			path = ServerSide;
+			sourceTree = "<group>";
+		};
 		C88F80B528D3538500E569BC = {
 			isa = PBXGroup;
 			children = (
@@ -138,13 +175,10 @@
 		C88F80C028D3538500E569BC /* AppCompanionMODSD2 */ = {
 			isa = PBXGroup;
 			children = (
-				C88F80C128D3538500E569BC /* AppCompanionMODSD2App.swift */,
-				C8FF096228DC63B300BF94A7 /* Views */,
+				C8D950A4290AEBAC001AA4DE /* Config */,
 				C8C67C7628E2117F003C36C4 /* UserSide */,
 				C8C67C7A28E2DB6B003C36C4 /* Domain */,
 				C8FF096628DC643D00BF94A7 /* ServerSide */,
-				C8C67C7728E211D1003C36C4 /* SupportingFiles */,
-				C88F80C728D3538600E569BC /* Preview Content */,
 			);
 			path = AppCompanionMODSD2;
 			sourceTree = "<group>";
@@ -184,8 +218,9 @@
 		C8C67C7A28E2DB6B003C36C4 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				C80F73BD28E7126200733294 /* Remote */,
-				C80F73AD28E6EECB00733294 /* Models */,
+				C8D9509F290AEA05001AA4DE /* driven_port */,
+				C8D950A2290AEB4D001AA4DE /* Internal */,
+				C8D9509D290AE9AB001AA4DE /* driver_port */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -193,10 +228,54 @@
 		C8C67C8228E2DEEA003C36C4 /* AppCompanionTests */ = {
 			isa = PBXGroup;
 			children = (
-				C8C67C8328E2DEEA003C36C4 /* AppCompanionTests.swift */,
-				C80F73B428E6FD7800733294 /* APITests.swift */,
+				C8D9509A290AD4C1001AA4DE /* TestDoubles */,
+				C85CA218290ACA9200822DE6 /* UserSide */,
+				C85CA217290ACA8900822DE6 /* Domain */,
+				C85CA219290ACA9900822DE6 /* ServerSide */,
 			);
 			path = AppCompanionTests;
+			sourceTree = "<group>";
+		};
+		C8D9509A290AD4C1001AA4DE /* TestDoubles */ = {
+			isa = PBXGroup;
+			children = (
+				C8D9509B290AE7FF001AA4DE /* DestinyDAOStub.swift */,
+			);
+			path = TestDoubles;
+			sourceTree = "<group>";
+		};
+		C8D9509D290AE9AB001AA4DE /* driver_port */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = driver_port;
+			sourceTree = "<group>";
+		};
+		C8D9509F290AEA05001AA4DE /* driven_port */ = {
+			isa = PBXGroup;
+			children = (
+				C8D950A0290AEA30001AA4DE /* IDestinyDAO.swift */,
+			);
+			path = driven_port;
+			sourceTree = "<group>";
+		};
+		C8D950A2290AEB4D001AA4DE /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				C8D95098290AD34D001AA4DE /* DestinyService.swift */,
+				C80F73AD28E6EECB00733294 /* Models */,
+			);
+			path = Internal;
+			sourceTree = "<group>";
+		};
+		C8D950A4290AEBAC001AA4DE /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				C85CA216290ACA6F00822DE6 /* Modules */,
+				C8C67C7728E211D1003C36C4 /* SupportingFiles */,
+				C88F80C728D3538600E569BC /* Preview Content */,
+			);
+			name = Config;
 			sourceTree = "<group>";
 		};
 		C8FF096228DC63B300BF94A7 /* Views */ = {
@@ -223,6 +302,8 @@
 		C8FF096628DC643D00BF94A7 /* ServerSide */ = {
 			isa = PBXGroup;
 			children = (
+				C8D950A5290AEC62001AA4DE /* DestinyDAO.swift */,
+				C80F73BD28E7126200733294 /* Remote */,
 			);
 			path = ServerSide;
 			sourceTree = "<group>";
@@ -368,14 +449,17 @@
 			files = (
 				C88F80C428D3538500E569BC /* ContentView.swift in Sources */,
 				C8D665A128E4921400243307 /* Extension+Data.swift in Sources */,
+				C8D95099290AD34D001AA4DE /* DestinyService.swift in Sources */,
 				C8FF096C28DC744B00BF94A7 /* Constant.swift in Sources */,
 				C89FD18128EB045700030A3D /* Current.swift in Sources */,
 				C80F73BF28E7155700733294 /* Destiny2SQLITEManager.swift in Sources */,
 				C80F73AF28E6EEE300733294 /* DestinyModels.swift in Sources */,
 				C89FD18628EB05CD00030A3D /* Mod.swift in Sources */,
 				C88F80C228D3538500E569BC /* AppCompanionMODSD2App.swift in Sources */,
+				C8D950A1290AEA30001AA4DE /* IDestinyDAO.swift in Sources */,
 				C80F73BC28E7115E00733294 /* Destiny2API.swift in Sources */,
 				C89FD18328EB04BB00030A3D /* Grid.swift in Sources */,
+				C8D950A6290AEC62001AA4DE /* DestinyDAO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,8 +467,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8C67C8428E2DEEA003C36C4 /* AppCompanionTests.swift in Sources */,
-				C80F73B528E6FD7800733294 /* APITests.swift in Sources */,
+				C8D95097290ACC82001AA4DE /* DestinyDAOTests.swift in Sources */,
+				C8D9509C290AE7FF001AA4DE /* DestinyDAOStub.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
