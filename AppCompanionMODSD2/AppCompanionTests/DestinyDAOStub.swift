@@ -10,10 +10,10 @@ import Foundation
 // ==================
 // MARK: - Test doubles
 // ==================
-class DestinyDAOStub: IDestinyDAO {
-    var dataStubbed: Data?
-    func downloadContentDatabaseForMods() -> Data? {
-        // mock real json retuned
-        return dataStubbed
-    }
-}
+//class DestinyDAOStub: IDestinyDAO {
+//    var dataStubbed: Data?
+//    func downloadContentDatabaseForMods() -> Data? {
+//        // mock real json retuned
+//        return dataStubbed
+//    }
+//}

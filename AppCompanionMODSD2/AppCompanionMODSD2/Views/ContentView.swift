@@ -40,16 +40,16 @@ struct ContentView: View {
                     Grid()
                         .onAppear {
 
-                            let service = DestinyService(DestinyDAO())
-                            service.downloadContentDatabaseForMods0 { result in
-                                switch result {
-                                    case .success(_):
-                                        print("ok")
-                                        selectedTabIndex = 1
-                                    case .failure(_):
-                                        print("not")
-                                }
-                            }
+//                            let service = DestinyService(DestinyDAO())
+//                            service.downloadContentDatabaseForMods0 { result in
+//                                switch result {
+//                                    case .success(_):
+//                                        print("ok")
+//                                        selectedTabIndex = 1
+//                                    case .failure(_):
+//                                        print("not")
+//                                }
+//                            }
                         print("Grid appear")
 
                     }
@@ -79,3 +79,24 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+/*
+aucun visibilité si tu reste ou sort
+
+ context :
+ reduction des TJM, sorti forcé pour remplacer par des jeune
+ 	S3, mais il est front , il est seule avoir la competence sur drupal
+ 	Accenture veux qui reste
+ 	Octo n'ont pas d'info
+
+ probleme: pas de visibilité
+ 	avec les
+
+ ok mi-novembre passe des RT
+ client
+
+ considéré que la page se tourne
+
+
+
+ https://www.altexsoft.com/blog/business/acceptance-criteria-purposes-formats-and-best-practices/
+ */
