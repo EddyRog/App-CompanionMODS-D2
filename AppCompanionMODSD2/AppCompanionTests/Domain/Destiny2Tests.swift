@@ -29,18 +29,20 @@ final class Destiny2Tests: XCTestCase {
     // MARK: - Test doubles
     // ==================
     class StubAdapterSqlite: IAdapterDestinySqliteManager {
-
-        var invokedDownloadSqliteDatabase = false
-        var invokedDownloadSqliteDatabaseCount = 0
-
-        func downloadSqliteDatabase(completion: @escaping (Result<Data, AppCompanionMODSD2.DestinyError>) -> Void) {
-            invokedDownloadSqliteDatabase = true
-            invokedDownloadSqliteDatabaseCount += 1
-            completion(.failure(.download))
+        func openSqliteDatabase() -> Bool {
+            return false
         }
+//        var invokedDownloadSqliteDatabase = false
+//        var invokedDownloadSqliteDatabaseCount = 0
+//
+//        func downloadSqliteDatabase(completion: @escaping (Result<Data, AppCompanionMODSD2.DestinyError>) -> Void) {
+//            invokedDownloadSqliteDatabase = true
+//            invokedDownloadSqliteDatabaseCount += 1
+//            completion(.failure(.download))
+//        }
     }
+    
     class DummyAdapterDestinyFileManager: IAdapterDestinyFileManager {
-
         func changeExtensionToZip(_ pathOfFile: String) throws -> String {
             ""
         }
@@ -50,6 +52,10 @@ final class Destiny2Tests: XCTestCase {
         }
 
         func deleteFileAtPath(_ tempFile: String) -> Bool {
+            return false
+        }
+
+        func unzipDatabase(filepath: String) -> Bool {
             return false
         }
     }

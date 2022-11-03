@@ -60,16 +60,14 @@ class Destiny2SQLITEManager {
                     case .DestinyGenderDefinition:
                         // decode
                         let data = try? JSONDecoder().decode(GenderCodable.self, from: dataJson)
-                        print(Gender(id: rowID.hashValue, hash: data!.hash, name: data!.displayProperties.name))
+//                        print(Gender(id: rowID.hashValue, hash: data!.hash, name: data!.displayProperties.name))
                     case .DestinyClassDefinition:
                         break
                 }
-
             }
         }
         sqlite3_finalize(selectStatment)
     }
-
     // helper
     private func printJson(_ value: String) {
         if let prettyJson = value.data(using: .utf8)?.prettyPrintedJSONString {

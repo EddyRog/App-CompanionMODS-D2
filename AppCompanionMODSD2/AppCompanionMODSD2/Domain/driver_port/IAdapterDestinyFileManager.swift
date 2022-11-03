@@ -11,4 +11,5 @@ protocol IAdapterDestinyFileManager {
     func changeExtensionToZip(_ pathOfFile: String) throws -> String
     func createFileWithData(path: String, destinyNameFile: String, data: Data) throws -> String
     func deleteFileAtPath(_ tempFile: String) -> Bool
+    func unzipDatabase(filepath: String) -> Bool 
 }

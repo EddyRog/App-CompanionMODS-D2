@@ -7,7 +7,7 @@
 
 import Foundation
 
-class AdapterDestinyDatabase {
+class AdapterDestinyDatabase: IAdapterDestinyDatabaseManager {
     // "https://www.bungie.net/common/destiny2_content/sqlite/fr/world_sql_content_aa813698cf6492188dde4fa1fe4d38d8.content"
     func downloadDatabase(myUrl: String ,completion: @escaping (Result<Data, AdapterDestinyDatabaseError>) -> Void ) {
 

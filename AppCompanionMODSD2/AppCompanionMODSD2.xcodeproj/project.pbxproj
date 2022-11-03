@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C80F73AF28E6EEE300733294 /* DestinyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80F73AE28E6EEE300733294 /* DestinyModels.swift */; };
+		C80F73AF28E6EEE300733294 /* DestinyGenderModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80F73AE28E6EEE300733294 /* DestinyGenderModels.swift */; };
 		C80F73BC28E7115E00733294 /* Destiny2API.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80F73BB28E7115E00733294 /* Destiny2API.swift */; };
 		C80F73BF28E7155700733294 /* Destiny2SQLITEManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80F73BE28E7155700733294 /* Destiny2SQLITEManager.swift */; };
+		C84AED6A2913DB6A00B143C5 /* IAdapterDestinyDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84AED692913DB6A00B143C5 /* IAdapterDestinyDatabase.swift */; };
+		C84AED6C29140C0600B143C5 /* json_DestinyGenderDefinition.json in Resources */ = {isa = PBXBuildFile; fileRef = C84AED6B29140C0600B143C5 /* json_DestinyGenderDefinition.json */; };
+		C84AED6F29140D7800B143C5 /* json_DestinyGenderDefinition.json in Sources */ = {isa = PBXBuildFile; fileRef = C84AED6B29140C0600B143C5 /* json_DestinyGenderDefinition.json */; };
+		C84AED7029140DBA00B143C5 /* json_DestinyGenderDefinition.json in Resources */ = {isa = PBXBuildFile; fileRef = C84AED6B29140C0600B143C5 /* json_DestinyGenderDefinition.json */; };
 		C8671A9E28D9FD82009716F9 /* Notes in Resources */ = {isa = PBXBuildFile; fileRef = C8671A9D28D9FD82009716F9 /* Notes */; };
 		C8671AA028DA0F6F009716F9 /* dsFR.json in Resources */ = {isa = PBXBuildFile; fileRef = C8671A9F28DA0F6F009716F9 /* dsFR.json */; };
 		C88F80C228D3538500E569BC /* AppCompanionMODSD2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F80C128D3538500E569BC /* AppCompanionMODSD2App.swift */; };
@@ -51,9 +55,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C80F73AE28E6EEE300733294 /* DestinyModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinyModels.swift; sourceTree = "<group>"; };
+		C80F73AE28E6EEE300733294 /* DestinyGenderModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinyGenderModels.swift; sourceTree = "<group>"; };
 		C80F73BB28E7115E00733294 /* Destiny2API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destiny2API.swift; sourceTree = "<group>"; };
 		C80F73BE28E7155700733294 /* Destiny2SQLITEManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destiny2SQLITEManager.swift; sourceTree = "<group>"; };
+		C84AED692913DB6A00B143C5 /* IAdapterDestinyDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAdapterDestinyDatabase.swift; sourceTree = "<group>"; };
+		C84AED6B29140C0600B143C5 /* json_DestinyGenderDefinition.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = json_DestinyGenderDefinition.json; sourceTree = "<group>"; };
 		C8671A9D28D9FD82009716F9 /* Notes */ = {isa = PBXFileReference; lastKnownFileType = text; path = Notes; sourceTree = "<group>"; };
 		C8671A9F28DA0F6F009716F9 /* dsFR.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = dsFR.json; sourceTree = "<group>"; };
 		C88F80BE28D3538500E569BC /* AppCompanionMODSD2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppCompanionMODSD2.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,7 +113,7 @@
 		C80F73AD28E6EECB00733294 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				C80F73AE28E6EEE300733294 /* DestinyModels.swift */,
+				C80F73AE28E6EEE300733294 /* DestinyGenderModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -134,6 +140,14 @@
 			children = (
 			);
 			path = "All Mods";
+			sourceTree = "<group>";
+		};
+		C84AED6D29140C3500B143C5 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				C84AED6B29140C0600B143C5 /* json_DestinyGenderDefinition.json */,
+			);
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 		C85CA216290ACA6F00822DE6 /* Modules */ = {
@@ -252,6 +266,7 @@
 				C85CA217290ACA8900822DE6 /* Domain */,
 				C85CA219290ACA9900822DE6 /* ServerSide */,
 				C8D9509A290AD4C1001AA4DE /* TestDoubles */,
+				C84AED6D29140C3500B143C5 /* SupportingFiles */,
 			);
 			path = AppCompanionTests;
 			sourceTree = "<group>";
@@ -267,6 +282,7 @@
 		C8D9509D290AE9AB001AA4DE /* driver_port */ = {
 			isa = PBXGroup;
 			children = (
+				C84AED692913DB6A00B143C5 /* IAdapterDestinyDatabase.swift */,
 				C8FD607C2912CEA10044FFED /* IAdapterDestinyFileManager.swift */,
 				C8FD60722912CD2E0044FFED /* IAdapterDestinySqliteManager.swift */,
 			);
@@ -456,6 +472,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C84AED7029140DBA00B143C5 /* json_DestinyGenderDefinition.json in Resources */,
 				C8671AA028DA0F6F009716F9 /* dsFR.json in Resources */,
 				C8671A9E28D9FD82009716F9 /* Notes in Resources */,
 				C88F80C928D3538600E569BC /* Preview Assets.xcassets in Resources */,
@@ -467,6 +484,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C84AED6C29140C0600B143C5 /* json_DestinyGenderDefinition.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,8 +523,9 @@
 				C8FF096C28DC744B00BF94A7 /* Constant.swift in Sources */,
 				C89FD18128EB045700030A3D /* Current.swift in Sources */,
 				C8FD60842912E6D20044FFED /* AdapterDestinyDatabase.swift in Sources */,
+				C84AED6A2913DB6A00B143C5 /* IAdapterDestinyDatabase.swift in Sources */,
 				C80F73BF28E7155700733294 /* Destiny2SQLITEManager.swift in Sources */,
-				C80F73AF28E6EEE300733294 /* DestinyModels.swift in Sources */,
+				C80F73AF28E6EEE300733294 /* DestinyGenderModels.swift in Sources */,
 				C8FD606F2912BDCA0044FFED /* AdapterDestinyFileManager.swift in Sources */,
 				C89FD18628EB05CD00030A3D /* Mod.swift in Sources */,
 				C88F80C228D3538500E569BC /* AppCompanionMODSD2App.swift in Sources */,
@@ -525,6 +544,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C84AED6F29140D7800B143C5 /* json_DestinyGenderDefinition.json in Sources */,
 				C8FD60632912A6560044FFED /* Destiny2Tests.swift in Sources */,
 				C8FD60712912BE320044FFED /* AdapterDestinyFileManagerTests.swift in Sources */,
 				C8FD60882912EE210044FFED /* AdapterDestinySqliteManager.swift in Sources */,
