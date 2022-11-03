@@ -32,3 +32,25 @@ Conséquence :
 * Permets de vérifier que je dispose bien de toutes les données nécessaire afin de créer les mods pour le métier
 
 ---
+
+###### Date 2022/11/03
+
+Titre : Récupération des fichiers json liés aux mods
+
+Contexte :
+
+* Blocage concernant le développement de la fonctionnalité qui semble impliquer plusieurs features.
+
+Descision : 
+
+- scinder les tâches en petites fonctionnalités
+
+Conséquence : 
+
+* Permettre de le tester facilement, et de reduire la complexité 
+
+Note : 
+Voir : Diagram
+BDD : https://beyondxscratch.com/2019/05/21/behavior-driven-development-from-scratch/
+
+---
