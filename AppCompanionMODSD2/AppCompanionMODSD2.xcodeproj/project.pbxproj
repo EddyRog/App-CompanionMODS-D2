@@ -19,20 +19,24 @@
 		C89FD18128EB045700030A3D /* Current.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89FD18028EB045700030A3D /* Current.swift */; };
 		C89FD18328EB04BB00030A3D /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89FD18228EB04BB00030A3D /* Grid.swift */; };
 		C89FD18628EB05CD00030A3D /* Mod.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89FD18528EB05CD00030A3D /* Mod.swift */; };
-		C8C67C9228E30DA6003C36C4 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = C8C67C9128E30DA6003C36C4 /* Zip */; };
+		C8D3506E2912FBE200B0F01B /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = C8D3506D2912FBE200B0F01B /* Zip */; };
+		C8D35070291302E500B0F01B /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = C8D3506F291302E500B0F01B /* Zip */; };
 		C8D665A128E4921400243307 /* Extension+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D665A028E4921400243307 /* Extension+Data.swift */; };
 		C8D9509C290AE7FF001AA4DE /* DestinyDAOStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D9509B290AE7FF001AA4DE /* DestinyDAOStub.swift */; };
-		C8D950A6290AEC62001AA4DE /* DestinyDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D950A5290AEC62001AA4DE /* DestinyDAO.swift */; };
 		C8FD60632912A6560044FFED /* Destiny2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FD60622912A6560044FFED /* Destiny2Tests.swift */; };
 		C8FD606B2912AE5B0044FFED /* Destiny2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FD606A2912AE5B0044FFED /* Destiny2.swift */; };
 		C8FD606F2912BDCA0044FFED /* AdapterDestinyFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FD606E2912BDCA0044FFED /* AdapterDestinyFileManager.swift */; };
 		C8FD60712912BE320044FFED /* AdapterDestinyFileManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FD60702912BE320044FFED /* AdapterDestinyFileManagerTests.swift */; };
-		C8FD60732912CD2E0044FFED /* IAdapterSqlite.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FD60722912CD2E0044FFED /* IAdapterSqlite.swift */; };
+		C8FD60732912CD2E0044FFED /* IAdapterDestinySqliteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FD60722912CD2E0044FFED /* IAdapterDestinySqliteManager.swift */; };
 		C8FD60772912CDA30044FFED /* DestinyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FD60762912CDA30044FFED /* DestinyError.swift */; };
-		C8FD60792912CE130044FFED /* AdapterSqlite.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FD60782912CE130044FFED /* AdapterSqlite.swift */; };
+		C8FD60792912CE130044FFED /* AdapterDestinySqliteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FD60782912CE130044FFED /* AdapterDestinySqliteManager.swift */; };
 		C8FD607B2912CE660044FFED /* AdapterDestinyFileManagerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FD607A2912CE660044FFED /* AdapterDestinyFileManagerError.swift */; };
 		C8FD607D2912CEA10044FFED /* IAdapterDestinyFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FD607C2912CEA10044FFED /* IAdapterDestinyFileManager.swift */; };
 		C8FD607F2912E19F0044FFED /* Destiny2Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FD607E2912E19F0044FFED /* Destiny2Errors.swift */; };
+		C8FD60822912E60B0044FFED /* AdapterDestinyDatabaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FD60812912E60B0044FFED /* AdapterDestinyDatabaseTests.swift */; };
+		C8FD60842912E6D20044FFED /* AdapterDestinyDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FD60832912E6D20044FFED /* AdapterDestinyDatabase.swift */; };
+		C8FD60862912E74E0044FFED /* AdapterDestinyDatabaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FD60852912E74E0044FFED /* AdapterDestinyDatabaseError.swift */; };
+		C8FD60882912EE210044FFED /* AdapterDestinySqliteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FD60872912EE210044FFED /* AdapterDestinySqliteManager.swift */; };
 		C8FF096C28DC744B00BF94A7 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FF096B28DC744B00BF94A7 /* Constant.swift */; };
 /* End PBXBuildFile section */
 
@@ -63,17 +67,20 @@
 		C8C67C8128E2DEEA003C36C4 /* AppCompanionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppCompanionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8D665A028E4921400243307 /* Extension+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Data.swift"; sourceTree = "<group>"; };
 		C8D9509B290AE7FF001AA4DE /* DestinyDAOStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DestinyDAOStub.swift; path = AppCompanionTests/DestinyDAOStub.swift; sourceTree = SOURCE_ROOT; };
-		C8D950A5290AEC62001AA4DE /* DestinyDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinyDAO.swift; sourceTree = "<group>"; };
 		C8FD60622912A6560044FFED /* Destiny2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destiny2Tests.swift; sourceTree = "<group>"; };
 		C8FD606A2912AE5B0044FFED /* Destiny2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destiny2.swift; sourceTree = "<group>"; };
 		C8FD606E2912BDCA0044FFED /* AdapterDestinyFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdapterDestinyFileManager.swift; sourceTree = "<group>"; };
 		C8FD60702912BE320044FFED /* AdapterDestinyFileManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdapterDestinyFileManagerTests.swift; sourceTree = "<group>"; };
-		C8FD60722912CD2E0044FFED /* IAdapterSqlite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAdapterSqlite.swift; sourceTree = "<group>"; };
+		C8FD60722912CD2E0044FFED /* IAdapterDestinySqliteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAdapterDestinySqliteManager.swift; sourceTree = "<group>"; };
 		C8FD60762912CDA30044FFED /* DestinyError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinyError.swift; sourceTree = "<group>"; };
-		C8FD60782912CE130044FFED /* AdapterSqlite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdapterSqlite.swift; sourceTree = "<group>"; };
+		C8FD60782912CE130044FFED /* AdapterDestinySqliteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdapterDestinySqliteManager.swift; sourceTree = "<group>"; };
 		C8FD607A2912CE660044FFED /* AdapterDestinyFileManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdapterDestinyFileManagerError.swift; sourceTree = "<group>"; };
 		C8FD607C2912CEA10044FFED /* IAdapterDestinyFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAdapterDestinyFileManager.swift; sourceTree = "<group>"; };
 		C8FD607E2912E19F0044FFED /* Destiny2Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destiny2Errors.swift; sourceTree = "<group>"; };
+		C8FD60812912E60B0044FFED /* AdapterDestinyDatabaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdapterDestinyDatabaseTests.swift; sourceTree = "<group>"; };
+		C8FD60832912E6D20044FFED /* AdapterDestinyDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdapterDestinyDatabase.swift; sourceTree = "<group>"; };
+		C8FD60852912E74E0044FFED /* AdapterDestinyDatabaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdapterDestinyDatabaseError.swift; sourceTree = "<group>"; };
+		C8FD60872912EE210044FFED /* AdapterDestinySqliteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdapterDestinySqliteManager.swift; sourceTree = "<group>"; };
 		C8FF096B28DC744B00BF94A7 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,7 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8C67C9228E30DA6003C36C4 /* Zip in Frameworks */,
+				C8D3506E2912FBE200B0F01B /* Zip in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8D35070291302E500B0F01B /* Zip in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,6 +164,8 @@
 			isa = PBXGroup;
 			children = (
 				C8FD60702912BE320044FFED /* AdapterDestinyFileManagerTests.swift */,
+				C8FD60812912E60B0044FFED /* AdapterDestinyDatabaseTests.swift */,
+				C8FD60872912EE210044FFED /* AdapterDestinySqliteManager.swift */,
 			);
 			path = ServerSide;
 			sourceTree = "<group>";
@@ -166,6 +176,7 @@
 				C88F80C028D3538500E569BC /* AppCompanionMODSD2 */,
 				C8C67C8228E2DEEA003C36C4 /* AppCompanionTests */,
 				C88F80BF28D3538500E569BC /* Products */,
+				C8FD60892912F69F0044FFED /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -181,7 +192,6 @@
 		C88F80C028D3538500E569BC /* AppCompanionMODSD2 */ = {
 			isa = PBXGroup;
 			children = (
-				C8D950A5290AEC62001AA4DE /* DestinyDAO.swift */,
 				C80F73BE28E7155700733294 /* Destiny2SQLITEManager.swift */,
 				C80F73BB28E7115E00733294 /* Destiny2API.swift */,
 				C8D950A4290AEBAC001AA4DE /* Config */,
@@ -228,7 +238,7 @@
 		C8C67C7A28E2DB6B003C36C4 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				C8D9509F290AEA05001AA4DE /* driven_port */,
+				C8FD60802912E4A40044FFED /* driven_port */,
 				C8D950A2290AEB4D001AA4DE /* Internal */,
 				C8D9509D290AE9AB001AA4DE /* driver_port */,
 			);
@@ -257,17 +267,10 @@
 		C8D9509D290AE9AB001AA4DE /* driver_port */ = {
 			isa = PBXGroup;
 			children = (
-				C8FD60722912CD2E0044FFED /* IAdapterSqlite.swift */,
 				C8FD607C2912CEA10044FFED /* IAdapterDestinyFileManager.swift */,
+				C8FD60722912CD2E0044FFED /* IAdapterDestinySqliteManager.swift */,
 			);
 			path = driver_port;
-			sourceTree = "<group>";
-		};
-		C8D9509F290AEA05001AA4DE /* driven_port */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = driven_port;
 			sourceTree = "<group>";
 		};
 		C8D950A2290AEB4D001AA4DE /* Internal */ = {
@@ -300,11 +303,26 @@
 		C8FD60752912CD980044FFED /* Error */ = {
 			isa = PBXGroup;
 			children = (
-				C8FD60762912CDA30044FFED /* DestinyError.swift */,
-				C8FD607A2912CE660044FFED /* AdapterDestinyFileManagerError.swift */,
 				C8FD607E2912E19F0044FFED /* Destiny2Errors.swift */,
+				C8FD607A2912CE660044FFED /* AdapterDestinyFileManagerError.swift */,
+				C8FD60852912E74E0044FFED /* AdapterDestinyDatabaseError.swift */,
+				C8FD60762912CDA30044FFED /* DestinyError.swift */,
 			);
 			path = Error;
+			sourceTree = "<group>";
+		};
+		C8FD60802912E4A40044FFED /* driven_port */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = driven_port;
+			sourceTree = "<group>";
+		};
+		C8FD60892912F69F0044FFED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		C8FF096228DC63B300BF94A7 /* Views */ = {
@@ -331,8 +349,9 @@
 		C8FF096628DC643D00BF94A7 /* ServerSide */ = {
 			isa = PBXGroup;
 			children = (
+				C8FD60832912E6D20044FFED /* AdapterDestinyDatabase.swift */,
 				C8FD606E2912BDCA0044FFED /* AdapterDestinyFileManager.swift */,
-				C8FD60782912CE130044FFED /* AdapterSqlite.swift */,
+				C8FD60782912CE130044FFED /* AdapterDestinySqliteManager.swift */,
 			);
 			path = ServerSide;
 			sourceTree = "<group>";
@@ -364,7 +383,7 @@
 			);
 			name = AppCompanionMODSD2;
 			packageProductDependencies = (
-				C8C67C9128E30DA6003C36C4 /* Zip */,
+				C8D3506D2912FBE200B0F01B /* Zip */,
 			);
 			productName = AppCompanionMODSD2;
 			productReference = C88F80BE28D3538500E569BC /* AppCompanionMODSD2.app */;
@@ -384,6 +403,9 @@
 				C8C67C8628E2DEEA003C36C4 /* PBXTargetDependency */,
 			);
 			name = AppCompanionTests;
+			packageProductDependencies = (
+				C8D3506F291302E500B0F01B /* Zip */,
+			);
 			productName = AppCompanionTests;
 			productReference = C8C67C8128E2DEEA003C36C4 /* AppCompanionTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -417,7 +439,7 @@
 			);
 			mainGroup = C88F80B528D3538500E569BC;
 			packageReferences = (
-				C8C67C9028E30DA6003C36C4 /* XCRemoteSwiftPackageReference "Zip" */,
+				C8D3506C2912FBE200B0F01B /* XCRemoteSwiftPackageReference "Zip" */,
 			);
 			productRefGroup = C88F80BF28D3538500E569BC /* Products */;
 			projectDirPath = "";
@@ -476,11 +498,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8FD60862912E74E0044FFED /* AdapterDestinyDatabaseError.swift in Sources */,
 				C88F80C428D3538500E569BC /* ContentView.swift in Sources */,
-				C8FD60792912CE130044FFED /* AdapterSqlite.swift in Sources */,
+				C8FD60792912CE130044FFED /* AdapterDestinySqliteManager.swift in Sources */,
 				C8D665A128E4921400243307 /* Extension+Data.swift in Sources */,
 				C8FF096C28DC744B00BF94A7 /* Constant.swift in Sources */,
 				C89FD18128EB045700030A3D /* Current.swift in Sources */,
+				C8FD60842912E6D20044FFED /* AdapterDestinyDatabase.swift in Sources */,
 				C80F73BF28E7155700733294 /* Destiny2SQLITEManager.swift in Sources */,
 				C80F73AF28E6EEE300733294 /* DestinyModels.swift in Sources */,
 				C8FD606F2912BDCA0044FFED /* AdapterDestinyFileManager.swift in Sources */,
@@ -490,11 +514,10 @@
 				C8FD607D2912CEA10044FFED /* IAdapterDestinyFileManager.swift in Sources */,
 				C80F73BC28E7115E00733294 /* Destiny2API.swift in Sources */,
 				C8FD606B2912AE5B0044FFED /* Destiny2.swift in Sources */,
-				C8FD60732912CD2E0044FFED /* IAdapterSqlite.swift in Sources */,
+				C8FD60732912CD2E0044FFED /* IAdapterDestinySqliteManager.swift in Sources */,
 				C89FD18328EB04BB00030A3D /* Grid.swift in Sources */,
 				C8FD607B2912CE660044FFED /* AdapterDestinyFileManagerError.swift in Sources */,
 				C8FD60772912CDA30044FFED /* DestinyError.swift in Sources */,
-				C8D950A6290AEC62001AA4DE /* DestinyDAO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,7 +527,9 @@
 			files = (
 				C8FD60632912A6560044FFED /* Destiny2Tests.swift in Sources */,
 				C8FD60712912BE320044FFED /* AdapterDestinyFileManagerTests.swift in Sources */,
+				C8FD60882912EE210044FFED /* AdapterDestinySqliteManager.swift in Sources */,
 				C8D9509C290AE7FF001AA4DE /* DestinyDAOStub.swift in Sources */,
+				C8FD60822912E60B0044FFED /* AdapterDestinyDatabaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -650,6 +675,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -680,6 +706,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -762,20 +789,25 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C8C67C9028E30DA6003C36C4 /* XCRemoteSwiftPackageReference "Zip" */ = {
+		C8D3506C2912FBE200B0F01B /* XCRemoteSwiftPackageReference "Zip" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/marmelroy/Zip.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
+				branch = master;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		C8C67C9128E30DA6003C36C4 /* Zip */ = {
+		C8D3506D2912FBE200B0F01B /* Zip */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C8C67C9028E30DA6003C36C4 /* XCRemoteSwiftPackageReference "Zip" */;
+			package = C8D3506C2912FBE200B0F01B /* XCRemoteSwiftPackageReference "Zip" */;
+			productName = Zip;
+		};
+		C8D3506F291302E500B0F01B /* Zip */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C8D3506C2912FBE200B0F01B /* XCRemoteSwiftPackageReference "Zip" */;
 			productName = Zip;
 		};
 /* End XCSwiftPackageProductDependency section */

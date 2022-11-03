@@ -13,7 +13,7 @@ final class Destiny2Tests: XCTestCase {
     func test_should_notGetModsThenThrowException() {
         let stubAdapterSqlite = StubAdapterSqlite()
         let stubFileManager = DummyAdapterDestinyFileManager()
-        let sut = Destiny2(adapterSqlite: stubAdapterSqlite, fileManager: stubFileManager)
+        let sut = Destiny2(adapterDestinySqliteManager: stubAdapterSqlite, adapterDestinyFileManager: stubFileManager)
         var thrownError: Error?
 
         XCTAssertThrowsError(try sut.getAllDestinyMods() ) {
@@ -28,7 +28,7 @@ final class Destiny2Tests: XCTestCase {
     // ==================
     // MARK: - Test doubles
     // ==================
-    class StubAdapterSqlite: IAdapterSqlite {
+    class StubAdapterSqlite: IAdapterDestinySqliteManager {
 
         var invokedDownloadSqliteDatabase = false
         var invokedDownloadSqliteDatabaseCount = 0

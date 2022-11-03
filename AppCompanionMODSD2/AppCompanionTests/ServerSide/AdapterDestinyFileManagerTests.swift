@@ -5,6 +5,7 @@
 // Swift 5.0
 
 @testable import AppCompanionMODSD2
+import Zip
 import XCTest
 
 final class AdapterDestinyFileManagerTests: XCTestCase {
@@ -13,6 +14,7 @@ final class AdapterDestinyFileManagerTests: XCTestCase {
     override func setUp() {
         super.setUp()
         sut = AdapterDestinyFileManager()
+
     }
     override func tearDown() {
         sut = nil
@@ -91,6 +93,48 @@ final class AdapterDestinyFileManagerTests: XCTestCase {
         let isFileDeleted = sut.deleteFileAtPath(tempFile)
 
         XCTAssertFalse(isFileDeleted)
+    }
+
+    func test_should_unZipACompressedFile() {
+        // given
+        let fileManager: FileManager = FileManager.default
+
+        // temp folder
+        let tempFolderPath: String = NSTemporaryDirectory()
+        let tempFilePath = tempFolderPath + "Destiny\(#function).sqlite3"
+
+        // create file
+        fileManager.createFile(atPath: tempFilePath, contents: Data())
+
+		// zip the file
+        let urlFileToZip = URL(string: tempFilePath)!
+
+        // document : create a zip in document folder
+        guard let documentFilePath = try? Zip.quickZipFiles([urlFileToZip], fileName : "Destiny\(#function)") else {
+            XCTFail("error: create zip file in the documenet folder")
+            return
+        }
+
+        let documentFolderPath = URL(string: documentFilePath.relativePath)!.deletingLastPathComponent().relativePath
+        let documentNameOfFile = documentFilePath.lastPathComponent
+
+        // move it in tmp file for purpose of test
+        _ = try? fileManager.moveItem(atPath: documentFolderPath + "/" + documentNameOfFile,
+                                              toPath: tempFolderPath + documentNameOfFile)
+
+        // remove file (zip) from document
+        if fileManager.fileExists(atPath: documentFilePath.relativePath) {
+            do { try fileManager.removeItem(at: documentFilePath) }
+            catch { XCTFail("error: remove file (zip) in document folder") }
+        }
+
+        // remove file (sqlite3) from tmp
+        do { try fileManager.removeItem(atPath: tempFilePath) }
+        catch  { XCTFail("error: remove file (sqlite3) in tmp folder before unzip") }
+
+        let isUnzipped = sut.unzipDatabase(filepath: tempFolderPath + documentNameOfFile)
+
+        XCTAssertTrue(isUnzipped)
     }
 
     // Helper

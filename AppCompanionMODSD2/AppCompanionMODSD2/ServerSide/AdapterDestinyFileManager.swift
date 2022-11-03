@@ -6,6 +6,7 @@
 
 
 import Foundation
+import Zip
 
 class AdapterDestinyFileManager: IAdapterDestinyFileManager {
 
@@ -36,6 +37,18 @@ class AdapterDestinyFileManager: IAdapterDestinyFileManager {
         } catch {
             return false
         }
+    }
+
+    func unzipDatabase(filepath: String) -> Bool {
+        guard let urlFileToUnzip = URL(string: filepath) else { return false }
+        guard let urlDocument: URL = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true) else { return false }
+        guard let urlDocumentReliativePath = URL(string: urlDocument.relativePath + "/") else { return false }
+        do {
+            try Zip.unzipFile(urlFileToUnzip, destination: urlDocumentReliativePath, overwrite: true, password: nil)
+        } catch {
+            fatalError("unzip")
+        }
+		return true
     }
 
 }

@@ -8,12 +8,12 @@ import Foundation
 
 class Destiny2 {
 
-    var adapterSqlite: IAdapterSqlite
-    var fileManager: IAdapterDestinyFileManager
+    var adapterDestinySqliteManager: IAdapterDestinySqliteManager
+    var adapterDestinyFileManager: IAdapterDestinyFileManager
 
-    internal init(adapterSqlite: IAdapterSqlite, fileManager: IAdapterDestinyFileManager) {
-        self.adapterSqlite = adapterSqlite
-        self.fileManager = fileManager
+    internal init(adapterDestinySqliteManager: IAdapterDestinySqliteManager, adapterDestinyFileManager: IAdapterDestinyFileManager) {
+        self.adapterDestinySqliteManager = adapterDestinySqliteManager
+        self.adapterDestinyFileManager = adapterDestinyFileManager
     }
 
     func getAllDestinyMods() throws -> [Mod] {
