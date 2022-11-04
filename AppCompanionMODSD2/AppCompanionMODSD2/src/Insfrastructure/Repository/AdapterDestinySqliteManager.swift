@@ -35,12 +35,12 @@ class AdapterDestinySqliteManager: IAdapterDestinySqliteManager {
                 switch table {
                     case .DestinyGenderDefinition:
                         if let dataJson: Data = rowJson.data(using: .utf8) {
-                            data?.append(DestinyAnyObject(uid: rowUid, json: dataJson, type: .DestinyGenderDefinition))
+//                            data?.append(DestinyAnyObject(uid: rowUid, json: dataJson, type: .DestinyGenderDefinition))
                         }
                         
                     case .DestinyClassDefinition:
                         if let dataJson: Data = rowJson.data(using: .utf8) {
-                            data?.append(DestinyAnyObject(uid: rowUid, json: dataJson, type: .DestinyGenderDefinition))
+//                            data?.append(DestinyAnyObject(uid: rowUid, json: dataJson, type: .DestinyGenderDefinition))
                         }
                 }
             }

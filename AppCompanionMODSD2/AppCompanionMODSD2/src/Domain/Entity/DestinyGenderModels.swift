@@ -41,3 +41,9 @@ struct DestinyAnyObject {
         }
     }
 }
+
+
+enum DestinyTableDatabase: String {
+    case DestinyGenderDefinition
+    case DestinyClassDefinition
+}
